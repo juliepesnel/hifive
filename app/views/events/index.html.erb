@@ -3,12 +3,11 @@
 
 
 <% @events.each do |event| %>
-  <%= event.restaurant_id.name %>
-  <% event.participations.each do |participation| %>
-    <%= participation.user.last_name %>
+  <p><%= event.restaurant.name %></p>
+    <% event.participations.each do |participation| %>
+    <%= participation.user.first_name %>
     <%= participation.status %>
     <% end %>
-  <%= event.happen_at %>
-  <%= event.due_at %>
-
+  <p><%= event.happen_at %></p>
+  <p><%= event.due_at %></p>
 <% end %>
