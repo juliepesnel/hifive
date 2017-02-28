@@ -4,7 +4,6 @@ class Event < ApplicationRecord
 
   has_many :participations, dependent: :destroy
   validates :happen_at, presence: true
-  validates :canceled_at, presence: true
   validates :due_at, presence: true
 
 end
