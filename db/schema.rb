@@ -34,10 +34,10 @@ ActiveRecord::Schema.define(version: 20170228200507) do
   end
 
   create_table "participations", force: :cascade do |t|
-    t.boolean  "confirmation"
+    t.integer  "status",     default: 0
     t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "event_id"
     t.index ["event_id"], name: "index_participations_on_event_id", using: :btree
     t.index ["user_id"], name: "index_participations_on_user_id", using: :btree
