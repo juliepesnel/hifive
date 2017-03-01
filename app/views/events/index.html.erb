@@ -3,6 +3,7 @@
 
 
 <% @events.each do |event| %>
+
   <p><%= event.restaurant.name %></p>
     <% event.participations.each do |participation| %>
     <%= participation.user.first_name %>
