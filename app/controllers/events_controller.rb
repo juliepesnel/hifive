@@ -2,54 +2,62 @@ class EventsController < ApplicationController
 
 before_action :set_event, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @events = current_user.events
-  end
 
-  def new
-    @event = Event.new
-  end
+ def index
+   @events = current_user.events
+ end
 
-  def create
-    @event = Event.new(event_params)
-    @event.user = current_user
-    if @event.save
-      # create participation for each friend
-      redirect_to event_path,  notice: "Event created! Here is your recap :)"
-    else
-      render :new , alert: "Ooooops, something missing! Please try again"
-    end
-  end
+ def new
+   @event = Event.new
+   @participation = @event.participations.build
+ end
 
-  def show
+ def create
+   @event = Event.new(event_params)
+   @event.user = current_user
+   user_ids = params[:event][:participations][:user_ids].reject(&:blank?)
+   @event.participations << user_ids.map { |user_id| Participation.new(user_id: user_id) }
+   if @event.save
+     redirect_to event_path(@event),  notice: "Event created! Here is your recap :)"
+   else
+     render :new , alert: "Ooooops, something missing! Please try again"
+   end
+ end
 
-  end
+ def show
+    # @event = Event.find(params[:id]).includes(:user, participations: {:user})
+    @creator = @event.user
+    @happening = @event.happen_at
+    @ultimatum = @event.due_at
+    @choosen_place = @event.restaurant
+    @guests = @event.participations
 
-  def edit
+ end
 
-  end
+ def edit
 
-  def update
-    if @event.update(event_params)
-      redirect_to event_path,  notice: "Event updated"
-    else
-      render :edit, alert: "event not updated"
-    end
-  end
+ end
 
-  def destroy
-    @event.canceled_at = Time.now
-    redirect_to :index, notice: "Event cancelled"
-  end
+ def update
+   if @event.update(event_params)
+     redirect_to event_path,  notice: "Event updated"
+   else
+     render :edit, alert: "event not updated"
+   end
+ end
+
+ def destroy
+   @event.canceled_at = Time.now
+   redirect_to :index, notice: "Event cancelled"
+ end
 
 private
 
-  def set_event
-    @event = Event.find(params[:id])
-  end
+ def set_event
+   @event = Event.find(params[:id])
+ end
 
-  def event_params
-    params.require(:event).permit(:happen_at, :canceled_at, :due_at, :user_id, :restaurant_id)
-  end
-
+ def event_params
+   params.require(:event).permit(:happen_at, :canceled_at, :due_at, :restaurant_id)
+ end
 end

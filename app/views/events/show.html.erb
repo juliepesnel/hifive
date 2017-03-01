@@ -1,2 +1,17 @@
-<h1>Events#show</h1>
+
 <p>Find me in app/views/events/show.html.erb</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1><%= @creator.first_name %></h1>
+      <p><%= @happening.strftime("Invited you on %d/%m/%Y %H:%M to") %></p>
+      <p><%= @choosen_place.name %></p>
+        <% @guests.each do |guest| %>
+        <%= guest.user.first_name %>
+        <%= guest.status %>
+      <% end %>
+      <p><%= @ultimatum.strftime("Answer before %d/%m/%Y %H:%M") %></p>
+    </div>
+  </div>
+</div>
