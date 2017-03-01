@@ -1,2 +1,11 @@
-<h1>Events#new</h1>
-<p>Find me in app/views/events/new.html.erb</p>
+<div class="container">
+ <%= simple_form_for(@event) do |f| %>
+       <%= f.simple_fields_for :participations do |uf| %>
+         <%= uf.input :user_ids, collection: User.all, label_method: :first_name, as: :check_boxes %>
+       <% end %>
+   <%= f.association :restaurant %>
+   <%= f.input :happen_at %>
+   <%= f.input :due_at %>
+   <%= f.button :submit %>
+ <% end %>
+</div>
