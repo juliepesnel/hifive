@@ -1,11 +1,8 @@
-Category.destroy_all
 Restaurant.destroy_all
 Event.destroy_all
 Participation.destroy_all
 User.destroy_all
 
-categories = %w(french italian thaï chinese fast-food)
-categories.each { |category| Category.create!(name: category) }
 
 restaurants = [
   {
@@ -13,7 +10,7 @@ restaurants = [
     address: "2, place de la Comédie",
     phone_number: "05.56.33.33.33",
     website: "https://www.tripadvisor.com",
-    category: Category.all.sample,
+    category: "brasserie"
     },
 
   {
@@ -21,7 +18,7 @@ restaurants = [
     address: "14, rue Paul Louis Lande",
     phone_number: "05.56.33.33.33",
     website: "https://www.tripadvisor.com",
-    category: Category.all.sample,
+    category: "gastronomie"
     },
 
   {
@@ -29,7 +26,7 @@ restaurants = [
     address: "9, rue Paul Louis Lande",
     phone_number: "05.56.33.33.33",
     website: "https://www.tripadvisor.com",
-    category: Category.all.sample,
+    category: "chinois"
     },
 
   {
@@ -37,7 +34,7 @@ restaurants = [
     address: "6, rue des Faussets",
     phone_number: "05.56.33.33.33",
     website: "https://www.tripadvisor.com",
-    category: Category.all.sample,
+    category: "vegetarien"
   }
 ]
 
