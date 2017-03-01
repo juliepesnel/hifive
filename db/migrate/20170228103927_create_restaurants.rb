@@ -6,7 +6,7 @@ class CreateRestaurants < ActiveRecord::Migration[5.0]
       t.text :picture
       t.string :phone_number
       t.string :website
-      t.references :category, foreign_key: true
+      t.string :category
 
       t.timestamps
     end
