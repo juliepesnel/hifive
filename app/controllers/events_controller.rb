@@ -15,11 +15,9 @@ before_action :set_event, only: [:show, :edit, :update, :destroy]
  def create
    @event = Event.new(event_params)
    @event.user = current_user
+   user_ids = params[:event][:participations][:user_ids].reject(&:blank?)
+   @event.participations << user_ids.map { |user_id| Participation.new(user_id: user_id) }
    if @event.save
-     params[:event][:participations][:user_ids].each do |user_id|
-       user = User.find(user_id) unless user_id.blank?
-       @participation = @event.participations.create(user: user)
-     end
      redirect_to event_path(@event),  notice: "Event created! Here is your recap :)"
    else
      render :new , alert: "Ooooops, something missing! Please try again"
