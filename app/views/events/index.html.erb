@@ -1,14 +1,51 @@
-<h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
+<div class= text-center>
+<h1>List of events</h1>
+</div>
+
+  <div class="container">
+   <div class="row">
+    <% @events.each do |event| %>
+      <div class="col-xs-12">
+        <div class="card card--evening">
+         <%= link_to "", event_path(event), class: "card-link" %>
 
 
-<% @events.each do |event| %>
 
-  <p><%= event.restaurant.name %></p>
-    <% event.participations.each do |participation| %>
-    <%= participation.user.first_name %>
-    <%= participation.status %>
+            <div class="card__date">
+
+         <span class="card__date__weekday">
+           <%= event.happen_at.strftime("%d")%>
+         </span>
+         <span class="card__date__day">
+           <%= event.happen_at.strftime("%m")%>
+         </span>
+         <span class="card__date__month">
+           <%= event.happen_at.strftime("%Y")%>
+         </span>
+            </div>
+            <div class="card__content">
+
+
+            <h2><strong><%= event.user.first_name  %></strong></h2>
+            <div class="inviting">
+            Invites you to
+            </div>
+
+              <div class="restaurant_name">
+                <strong>"<%= event.restaurant.name%>"</strong>
+
+              </div>
+                <div class="due_date">
+                  <%= event.due_at.strftime("Answer before %d/%m/%Y %H:%M") %>
+
+                </div>
+            </div>
+        </div>
+      </div>
+
     <% end %>
-  <p><%= event.happen_at %></p>
-  <p><%= event.due_at %></p>
-<% end %>
+    </div>
+  </div>
+
+
+
