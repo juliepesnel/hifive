@@ -1,5 +1,7 @@
 Category.destroy_all
 Restaurant.destroy_all
+Event.destroy_all
+Participation.destroy_all
 User.destroy_all
 
 categories = %w(french italian thaï chinese fast-food)
@@ -91,3 +93,20 @@ events = [
 ]
 
 events.each {|event| Event.create!(event)}
+
+participations = [
+{
+  user: User.first,
+  event: Event.first,
+  status: 0
+},
+
+{
+  user: User.second,
+  event: Event.first,
+  status: 1
+}
+
+]
+
+participations.each {|participation| Participation.create!(participation)}
