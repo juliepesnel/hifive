@@ -102,6 +102,18 @@ participations = [
   user: User.second,
   event: Event.first,
   status: 1
+},
+
+{
+  user: User.third,
+  event: Event.first,
+  status: 2
+},
+
+{
+  user: User.all.sample,
+  event: Event.second,
+  status: 1
 }
 
 ]

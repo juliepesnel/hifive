@@ -2,6 +2,10 @@
 @import "avatars";
 @import "badges";
 
+@import "show";
+@import "buttons";
+
+
 body {
  box-sizing: border-box;
  font-family: 'Open Sans', sans-serif;
@@ -142,3 +146,4 @@ h1, h2 {
 .card-link:hover{
   opacity: 0.1;
 }
+

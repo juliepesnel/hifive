@@ -31,7 +31,6 @@ before_action :set_event, only: [:show, :edit, :update, :destroy]
     @ultimatum = @event.due_at
     @choosen_place = @event.restaurant
     @guests = @event.participations
-
  end
 
  def edit
