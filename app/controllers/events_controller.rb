@@ -12,9 +12,9 @@ before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def create
     @event = Event.new(event_params)
-    @event.save
     @event.user = current_user
     if @event.save
+      # create participation for each friend
       redirect_to event_path,  notice: "Event created! Here is your recap :)"
     else
       render :new , alert: "Ooooops, something missing! Please try again"
