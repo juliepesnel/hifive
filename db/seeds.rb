@@ -77,15 +77,15 @@ events = [
   {
     restaurant: Restaurant.all.sample,
     user: User.all.sample,
-    happen_at: DateTime.now,
-    due_at: DateTime.now + (5/24.0)
+    happen_at: DateTime.now + (5/24.0),
+    due_at: DateTime.now + (2/24.0)
   },
 
     {
     restaurant: Restaurant.all.sample,
     user: User.all.sample,
-    happen_at: DateTime.now,
-    due_at: DateTime.now + (8/24.0)
+    happen_at: DateTime.now + (8/24.0),
+    due_at: DateTime.now + (5/24.0)
   }
 ]
 
