@@ -4,8 +4,9 @@ before_action :set_event, only: [:show, :edit, :update, :destroy]
 
 
  def index
-   @events = current_user.events
- end
+ @events = current_user.events.where(canceled_at: nil)
+ @cancelled_events = current_user.events.where.not(canceled_at: nil)
+end
 
  def new
    @event = Event.new
@@ -35,12 +36,14 @@ before_action :set_event, only: [:show, :edit, :update, :destroy]
  end
 
  def edit
-
- end
+  @event.canceled_at = DateTime.now
+  @event.save
+  redirect_to events_path, notice: "Event cancelled"
+end
 
  def update
    if @event.update(event_params)
-     redirect_to event_path,  notice: "Event updated"
+     redirect_to event_path,  notice: "Your Event is updated"
    else
      render :edit, alert: "event not updated"
    end

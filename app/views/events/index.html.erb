@@ -2,51 +2,84 @@
 <h1>List of events</h1>
 </div>
 
-  <div class="container">
-   <div class="row">
-    <% @events.each do |event| %>
-      <div class="col-xs-12">
-        <div class="card card--evening">
-         <%= link_to "", event_path(event), class: "card-link" %>
+ <div class="container">
+  <div class="row">
+   <% @events.each do |event| %>
+     <div class="col-xs-12">
+       <div class="card card--evening">
+        <%= link_to "", event_path(event), class: "card-link" %>
 
-            <div class="card__date">
+           <div class="card__date">
 
-         <span class="card__date__weekday">
-           <%= event.happen_at.strftime("%d")%>
-         </span>
-         <span class="card__date__day">
-           <%= event.happen_at.strftime("%m")%>
-         </span>
-         <span class="card__date__month">
-           <%= event.happen_at.strftime("%Y")%>
-         </span>
-            </div>
-            <div class="card__content">
-            <%= avatar_image_tag(current_user, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
+        <span class="card__date__weekday">
+          <%= event.happen_at.strftime("%d")%>
+        </span>
+        <span class="card__date__day">
+          <%= event.happen_at.strftime("%m")%>
+        </span>
+        <span class="card__date__month">
+          <%= event.happen_at.strftime("%Y")%>
+        </span>
+           </div>
+           <div class="card__content">
+           <%= avatar_image_tag(current_user, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
+           <h2><strong><%= event.user.first_name  %></strong></h2>
+           <div class="inviting">
+           Invites you to
+           </div>
+             <%= image_tag "imgres.jpg", class: "card-restaurant" %>
+             <div class="restaurant_name">
+               <strong>"<%= event.restaurant.name%>"</strong>
 
-            <h2><strong><%= event.user.first_name  %></strong></h2>
+             </div>
+               <div class="due_date">
+                 <%= event.due_at.strftime("Answer before %d/%m/%Y %H:%M") %>
 
-            <div class="inviting">
-            Invites you to
-            </div>
-
-              <%= image_tag "imgres.jpg", class: "card-restaurant" %>
-
-              <div class="restaurant_name">
-                <strong>"<%= event.restaurant.name%>"</strong>
-
-              </div>
-                <div class="due_date">
-                  <%= event.due_at.strftime("Answer before %d/%m/%Y %H:%M") %>
-
-                </div>
-            </div>
-        </div>
-      </div>
-
-    <% end %>
-    </div>
-  </div>
-
+               </div>
+           </div>
+       </div>
+     </div>
+   <% end %>
+   </div>
+ </div>
+ <div class="container">
+    <div class="row">
+     <% @cancelled_events.each do |cancelled_event| %>
+       <div class="col-xs-12">
+           <div class="card card--evening">
+             <%= link_to "", event_path(cancelled_event), class: "card-link" %>
+               <div class="card__date">
+                 <span class="card__date__weekday">
+                   <%= cancelled_event.happen_at.strftime("%d")%>
+                 </span>
+                 <span class="card__date__day">
+                   <%= cancelled_event.happen_at.strftime("%m")%>
+                 </span>
+                 <span class="card__date__month">
+                   <%= cancelled_event.happen_at.strftime("%Y")%>
+                 </span>
+               </div>
+               <div class="card__content">
+                 <%= avatar_image_tag(current_user, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
+                 <h2><strong><%= cancelled_event.user.first_name  %></strong></h2>
+               <div class="inviting">
+                   Invites you to
+               </div>
+               <%= image_tag "imgres.jpg", class: "card-restaurant" %>
+               <div style="color: red">
+                 <strong><%= "EVENT CANCELLED" %></strong>
+               </div>
+               <div class="restaurant_name">
+                 <strong>"<%= cancelled_event.restaurant.name%>"</strong>
+               </div>
+                 <div class="due_date">
+                 <%= cancelled_event.due_at.strftime("Answer before %d/%m/%Y %H:%M") %>
+                 </div>
+               </div>
+           </div>
+         </div>
+       <% end %>
+     </div>
+   </div>
 
 
