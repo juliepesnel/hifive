@@ -9,8 +9,6 @@
         <div class="card card--evening">
          <%= link_to "", event_path(event), class: "card-link" %>
 
-
-
             <div class="card__date">
 
          <span class="card__date__weekday">
@@ -24,12 +22,15 @@
          </span>
             </div>
             <div class="card__content">
-
+            <%= avatar_image_tag(current_user, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
 
             <h2><strong><%= event.user.first_name  %></strong></h2>
+
             <div class="inviting">
             Invites you to
             </div>
+
+              <%= image_tag "imgres.jpg", class: "card-restaurant" %>
 
               <div class="restaurant_name">
                 <strong>"<%= event.restaurant.name%>"</strong>
