@@ -58,9 +58,10 @@ ActiveRecord::Schema.define(version: 20170301165557) do
     t.text     "picture"
     t.string   "phone_number"
     t.string   "website"
-    t.string   "category"
+    t.integer  "category_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.index ["category_id"], name: "index_restaurants_on_category_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -91,4 +92,5 @@ ActiveRecord::Schema.define(version: 20170301165557) do
   add_foreign_key "events", "users"
   add_foreign_key "participations", "events"
   add_foreign_key "participations", "users"
+  add_foreign_key "restaurants", "categories"
 end
