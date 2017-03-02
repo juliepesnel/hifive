@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :events
   resources :participations, only: [:update]
+
+  mount Attachinary::Engine => "/attachinary"
 end
