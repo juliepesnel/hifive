@@ -15,8 +15,6 @@ ActiveRecord::Schema.define(version: 20170301165557) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-
-
   create_table "attachinary_files", force: :cascade do |t|
     t.string   "attachinariable_type"
     t.integer  "attachinariable_id"
@@ -31,9 +29,6 @@ ActiveRecord::Schema.define(version: 20170301165557) do
     t.datetime "updated_at"
     t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
   end
-
- 
-
 
   create_table "events", force: :cascade do |t|
     t.datetime "happen_at"
