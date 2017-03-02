@@ -1,13 +1,13 @@
 class ParticipationsController < ApplicationController
 
   def update
-    #event_id
-    #user_id / current_user
-
-    #requete participation.where(current_user.id, event.id)
-    #requete
-    #participation.
-
+    participation = Participation.find(params[:id])
+    if participation.update(participation_params)
+      flash[:notice] = 'thank you for answering'
+    else
+      flash[:alert] = 'something went wrong'
+    end
+      redirect_to event_path(participation.event)
   end
 
   private

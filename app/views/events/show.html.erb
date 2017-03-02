@@ -34,8 +34,8 @@
           </div>
       </div>
     </div>
-  <%= link_to 'yes', participation_path, method: :patch, class: "btn-medium"%>
-  <%= link_to 'no', participation_path, method: :patch, class: "btn-medium"%>
+  <%= link_to 'Confirm', participation_path(@participation, participation: {status: :confirmed}), method: :patch, class: "btn-medium" %>
+  <%= link_to 'Declined', participation_path(@participation, participation: {status: :declined}), method: :patch, class: "btn-medium"%>
   <%= link_to 'back to list', events_path, class: "btn-medium"%>
   </div>
 </div>
