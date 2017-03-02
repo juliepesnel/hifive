@@ -1,14 +1,15 @@
-
 <p>Find me in app/views/events/show.html.erb</p>
 
-<div class="container">
+<div class="container2">
   <div class="row">
     <div class="col-xs-12 col-md-12">
       <h1 class="text-center"><%= @creator.first_name + "'s event" %></h1>
+
         <div class="row">
           <div class="col-xs-6 col-md-3" class="img-rounded">
           <%= image_tag 'imgres.jpg', class: "img-thumbnail" %>
           </div>
+
             <div class="row">
               <div class="col-xs-6 col-md-3">
               <p class="text-center"><%= "occuring at" + " " + @choosen_place.name %></p>
@@ -16,22 +17,25 @@
               </div>
             </div>
 
-        <div class="row">
-          <div class="col-xs-12 col-md-4">
-            <% @guests.each do |guest| %>
+
+          <div class="row">
             <div class="col-xs-12 col-md-4">
-              <p class="text-center"><%= guest.user.first_name %> <%= guest.status %></p>
+              <% @guests.each do |guest| %>
+              <div class="col-xs-4 col-md-4">
+                <p class="text-center"><%= guest.user.first_name %> <%= guest.status %></p>
+                </div>
+              <% end %>
             </div>
-          <% end %>
+
+          <div class="row">
+            <div class="col-xs-12 col-md-12">
+            <p class="text-center"><%= @ultimatum.strftime("Please answer before %d/%m/%Y %H:%M") %></p>
+            </div>
           </div>
-        <div class="row">
-          <div class="col-xs-12 col-md-12">
-          <p class="text-center"><%= @ultimatum.strftime("Please answer before %d/%m/%Y %H:%M") %></p>
-          </div>
-        </div>
       </div>
     </div>
+  <%= link_to 'yes', participation_path, method: :patch, class: "btn-medium"%>
+  <%= link_to 'no', participation_path, method: :patch, class: "btn-medium"%>
+  <%= link_to 'back to list', events_path, class: "btn-medium"%>
   </div>
-<%= link_to 'confirm', events_path, class: "btn-medium" %>
-<%= link_to 'back to list', events_path, class: "btn-medium" %>
 </div>
