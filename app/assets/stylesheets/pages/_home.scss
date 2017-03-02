@@ -7,8 +7,8 @@
   padding: 5% 0 0 0;
   background: url(main-bg.jpg);
   width: 100%;
-    height: 100%;
-    background-size: cover;
+  height: 200%;
+  background-size: cover;
 }
 
 #wrapper-home h1 {
@@ -26,19 +26,41 @@ h2.subtitle {
 }
 
 /* social */
-.social {
+.footer-social {
     padding: 30px 0 0 0;
+    position: bottom;
 }
 
-.social a {
+.footer-social a {
     font-size: 24px;
     color: #fff;
     padding: 0 5px;
     transition: all 0.3s;
 }
 
-.social a:hover {
+.footer-social a:hover {
     color: #5cacce;
+}
+
+.button-create {
+  padding: 60px;
+  position: bottom;
+}
+
+.button-create-pad {
+  color: white;
+  background-color: #FFC300;
+  border: 1px solid #ffc300;
+  padding: 20px 25px;
+  border-radius: 50px;
+  font-size: 20px;
+  opacity: 1;
+}
+
+.button-create-pad:hover {
+  opacity: 0,8;
+  text-decoration: none;
+  color: white;
 }
 
 /* countdown */
