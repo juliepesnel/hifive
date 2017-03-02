@@ -29,13 +29,16 @@
               </div>
             </div>
             <div class="row">
-              <div class="form-action col-sm-12 text-center">
+              <div class="form-actions col-sm-6 text-left">
+                <%- if devise_mapping.omniauthable? %>
+                  <%- resource_class.omniauth_providers.each do |provider| %>
+                    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: 'btn btn-primary' %><br />
+                  <% end -%>
+                <% end -%>
+              </div>
+              <div class="form-action col-sm-6 text-right">
                 <%= f.button :submit, "Join Us!", class: 'btn btn-success' %>
               </div>
-            </div>
-          </div>
-          <div class="row col-xs-4">
-            <div class="form-input">
             </div>
           </div>
         </div>
@@ -47,3 +50,5 @@
       </div>
     <% end %>
 </div>
+
+
