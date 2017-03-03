@@ -1,11 +1,49 @@
 <div class="container">
- <%= simple_form_for(@event) do |f| %>
-       <%= f.simple_fields_for :participations do |uf| %>
-         <%= uf.input :user_ids, collection: User.all, label_method: :first_name, as: :check_boxes %>
-       <% end %>
-   <%= f.association :restaurant %>
-   <%= f.input :happen_at %>
-   <%= f.input :due_at %>
-   <%= f.button :submit %>
- <% end %>
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <%= simple_form_for(@event) do |f| %>
+        <div class="selectable_users">
+          <%= f.fields_for :participations do |uf| %>
+            <% User.all.each do |user| %>
+              <label>
+                <%= uf.check_box "user_ids", { multiple: true }, user.id, nil %>
+                <%= avatar_image_tag user %>
+                <%= user.first_name %>
+              </label>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <div class="selectable_restaurants">
+          <%= f.fields_for :restaurants do |rf| %>
+            <% Restaurant.all.each do |restaurant| %>
+            <label>
+            <%= rf.check_box "name", { multiple: true }, restaurant.name, nil %>
+            <br>
+            <%= restaurant.name %>
+            <br>
+            <%= image_tag restaurant.picture %>
+            <br>
+            <%= restaurant.category %>
+            <br>
+          </label>
+        <% end  %>
+        <% end %>
+     </div>
+     </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 text-center">
+    <%= f.input :happen_at %>
+    <br>
+    <%= f.input :due_at %>
+    <br>
+    <%= f.button :submit, class: "btn btn-primary" %>
+    <br>
+    </div>
+    </div>
+  <% end %>
 </div>

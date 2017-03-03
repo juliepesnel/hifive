@@ -10,7 +10,8 @@ restaurants = [
     address: "2, place de la Comédie",
     phone_number: "05.56.33.33.33",
     website: "https://www.tripadvisor.com",
-    category: "brasserie"
+    category: "brasserie",
+    picture: "http://www.papillesetpupilles.fr/wp-content/uploads/2012/10/Le-Pressoir-dArgent.jpg",
     },
 
   {
@@ -18,7 +19,8 @@ restaurants = [
     address: "14, rue Paul Louis Lande",
     phone_number: "05.56.33.33.33",
     website: "https://www.tripadvisor.com",
-    category: "gastronomie"
+    category: "gastronomie",
+    picture: "https://u.tfstatic.com/restaurant_photos/210/68210/169/612/cote-rue-salle-b8c25.jpg",
     },
 
   {
@@ -26,7 +28,8 @@ restaurants = [
     address: "9, rue Paul Louis Lande",
     phone_number: "05.56.33.33.33",
     website: "https://www.tripadvisor.com",
-    category: "chinois"
+    category: "chinois",
+    picture: "http://www.leafstyle.fr/wp-content/uploads/2015/07/dragon-dore-restaurant-chinois-bordeaux4.jpg",
     },
 
   {
@@ -34,7 +37,8 @@ restaurants = [
     address: "6, rue des Faussets",
     phone_number: "05.56.33.33.33",
     website: "https://www.tripadvisor.com",
-    category: "vegetarien"
+    category: "vegetarien",
+    picture: "https://u.tfstatic.com/restaurant_photos/405/45405/169/612/melodie-melodie-16337.jpg",
   }
 ]
 
@@ -47,6 +51,7 @@ users = [
  last_name: "Le Pen",
  email: "JM@gmail.com",
  password: "123456",
+ facebook_picture_url: "https://randomuser.me/api/portraits/men/1.jpg",
  },
 
 {
@@ -54,6 +59,7 @@ users = [
  last_name: "Le Pen",
  email: "marine@gmail.com",
  password: "123456",
+ facebook_picture_url: "https://randomuser.me/api/portraits/women/90.jpg",
  },
 
 {
@@ -61,6 +67,7 @@ users = [
  last_name: "Le Pan",
  email: "Jules@gmail.com",
  password: "123456",
+ facebook_picture_url: "https://randomuser.me/api/portraits/men/1.jpg",
  },
 
 {
@@ -68,6 +75,7 @@ users = [
  last_name: "Le Don",
  email: "lucie@gmail.com",
  password: "123456",
+ facebook_picture_url: "https://randomuser.me/api/portraits/women/90.jpg",
  }
 ]
 
