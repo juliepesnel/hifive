@@ -56,13 +56,15 @@
          <%= link_to 'Confirm', participation_path(@participation, participation: {status: :confirmed}), method: :patch, class: "btn-confirm" %>
          <%= link_to 'Declined', participation_path(@participation, participation: {status: :declined}), method: :patch, class: "btn-declined"%>
          </div>
+        
        <div class="row">
          <div class="col-xs-12 col-md-12">
          <%= link_to 'back to list', events_path, class: "btn-medium"%>
          <%= link_to 'Cancel event', edit_event_path(@event), class: "btn-medium" %>
          <%= link_to 're-launch event', event_path(@event, event: {canceled_at: :nil}), method: :patch, class: "btn-medium" %>
          </div>
-       </div>
-      </div>
-  </div>
+           </div>
+        </div>
+    </div>
 </div>
+
