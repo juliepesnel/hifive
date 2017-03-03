@@ -1,49 +1,68 @@
 <p>Find me in app/views/events/show.html.erb</p>
 
-<div class="container2">
-  <div class="row">
-    <div class="col-xs-12 col-md-12">
-      <h1 class="text-center"><%= @creator.first_name + "'s event" %></h1>
-
-        <div class="row">
-          <div class="col-xs-6 col-md-3" class="img-rounded">
-          <%= image_tag 'imgres.jpg', class: "img-thumbnail" %>
+<div class="container">
+  <div class="container_show">
+    <div class="row" >
+        <div class="col-xs-12 col-md-12">
+          <div class="title">
+            <h1><%= @creator.first_name + "'s event" %></h1>
           </div>
 
             <div class="row">
-              <div class="col-xs-6 col-md-3">
-              <p class="text-center"><%= "occuring at" + " " + @choosen_place.name %></p>
-              <p class="text-center"><%= "on" + " " + @happening.strftime("%d/%m/%Y %H:%M") %></p>
+              <div class="col-xs-6 col-md-6">
+                <%= image_tag 'imgres.jpg' %>
+              </div>
+
+              <div class="row">
+                <div class="text-left placeandtime">
+                  <div class="col-xs-6 col-md-6">
+                    <p><%= "occuring at" + " " + @choosen_place.name %></p>
+                    <p><%= "on" + " " + @happening.strftime("%d/%m/%Y %H:%M") %></p>
+                  </div>
+                 </div>
               </div>
             </div>
 
-
-          <div class="row">
-            <div class="col-xs-12 col-md-4">
-              <% @guests.each do |guest| %>
-              <div class="col-xs-4 col-md-4">
-                <p class="text-center"><%= guest.user.first_name %> <%= guest.status %></p>
+            <div class="row">
+              <div class="text-center guests">
+                <div class="col-xs-12 col-md-12">
+                  <% @guests.each do |guest| %>
+                    <div class="col-xs-4 col-md-4" >
+                      <p><%= guest.user.first_name %></p>
+                    <% if guest.status == "confirmed" %>
+                      <div class="text-confirmed"><%= guest.status %></div>
+                    <% elsif guest.status == "declined" %>
+                      <div class="text-declined"><%= guest.status %></div>
+                    <% else %>
+                      <div class="text-pending"><%= guest.status %></div>
+                    <% end %>
+                    </div>
+                  <% end %>
                 </div>
-              <% end %>
+              </div>
             </div>
 
           <div class="row">
             <div class="col-xs-12 col-md-12">
-            <p class="text-center"><%= @ultimatum.strftime("Please answer before %d/%m/%Y %H:%M") %></p>
+              <div class="ultimatum">
+                <p><%= @ultimatum.strftime("Please answer before %d/%m/%Y %H:%M") %></p>
+              </div>
             </div>
           </div>
       </div>
     </div>
-  <div class="row">
-     <div class="col-xs-12 col-md-12">
-     <%= link_to 'Confirm', participation_path(@participation, participation: {status: :confirmed}), method: :patch, class: "btn-medium" %>
-     <%= link_to 'Declined', participation_path(@participation, participation: {status: :declined}), method: :patch, class: "btn-medium"%>
-   <div class="row">
-     <div class="col-xs-12 col-md-12">
-     <%= link_to 'back to list', events_path, class: "btn-medium"%>
-     <%= link_to 'Cancel event', edit_event_path(@event), class: "btn-medium" %>
-     <%= link_to 're-launch event', event_path(@event, event: {canceled_at: :nil}), method: :patch, class: "btn-medium" %>
-     </div>
-   </div>
+      <div class="row">
+         <div class="col-xs-12 col-md-12">
+         <%= link_to 'Confirm', participation_path(@participation, participation: {status: :confirmed}), method: :patch, class: "btn-confirm" %>
+         <%= link_to 'Declined', participation_path(@participation, participation: {status: :declined}), method: :patch, class: "btn-declined"%>
+         </div>
+       <div class="row">
+         <div class="col-xs-12 col-md-12">
+         <%= link_to 'back to list', events_path, class: "btn-medium"%>
+         <%= link_to 'Cancel event', edit_event_path(@event), class: "btn-medium" %>
+         <%= link_to 're-launch event', event_path(@event, event: {canceled_at: :nil}), method: :patch, class: "btn-medium" %>
+         </div>
+       </div>
+      </div>
   </div>
 </div>
