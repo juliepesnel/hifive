@@ -76,16 +76,23 @@ users.each {|user| User.create!(user)}
 events = [
   {
     restaurant: Restaurant.all.sample,
-    user: User.all.sample,
+    user: User.first,
     happen_at: DateTime.now + (5/24.0),
     due_at: DateTime.now + (2/24.0)
   },
 
     {
     restaurant: Restaurant.all.sample,
-    user: User.all.sample,
+    user: User.first,
     happen_at: DateTime.now + (8/24.0),
     due_at: DateTime.now + (5/24.0)
+  },
+
+   {
+    restaurant: Restaurant.all.sample,
+    user: User.first,
+    happen_at: DateTime.now + (5/24.0),
+    due_at: DateTime.now + (2/24.0)
   }
 ]
 
@@ -93,27 +100,57 @@ events.each {|event| Event.create!(event)}
 
 participations = [
 {
-  user: User.first,
+  user: User.second,
   event: Event.first,
   status: 0
 },
 
 {
-  user: User.second,
+  user: User.third,
   event: Event.first,
   status: 1
 },
 
 {
-  user: User.third,
+  user: User.first,
   event: Event.first,
   status: 2
 },
 
 {
-  user: User.all.sample,
+  user: User.second,
+  event: Event.second,
+  status: 0
+},
+
+{
+  user: User.third,
   event: Event.second,
   status: 1
+},
+
+{
+  user: User.first,
+  event: Event.second,
+  status: 2
+},
+
+{
+  user: User.second,
+  event: Event.third,
+  status: 1
+},
+
+{
+  user: User.third,
+  event: Event.third,
+  status: 0
+},
+
+{
+  user: User.first,
+  event: Event.third,
+  status: 2
 }
 
 ]
