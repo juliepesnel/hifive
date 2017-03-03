@@ -19,7 +19,7 @@
   </head>
 
   <body>
-  <div id="wrapper-home">
+  <div id="wrapper-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path main.jpg %>');">
     <div class="container-home">
       <h1>We're working hard to bring you the best. Be ready in:</h1>
       <div id="clockdiv">
@@ -42,32 +42,10 @@
       </div>
       <br>
       <br>
-      <div class="row">
-        <div class="col-md-12">
-          <form class="form-inline signup" role="form">
-            <div class="form-group">
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email address">
-            </div>
-            <button type="submit" class="btn btn-primary">Get notified!</button>
-          </form>
-          <div class="social">
-            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6 col-lg-offset-3">
-            <p class="copyright">&copy; HiFive - All Rights Reserved</p>
-            <div class="credits">
-
-            </div>
-        </div>
+      <div class="button-create">
+      <%= link_to t(".top_call_to_action", default: "Create an event"), new_event_path, class: "button-create-pad" %>
       </div>
     </div>
-  </div>
-
+   </div>
 </body>
 </html>
