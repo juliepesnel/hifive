@@ -18,10 +18,9 @@
     <div class="row">
       <div class="col-xs-12 text-center">
         <div class="selectable_restaurants">
-          <%= f.fields_for :restaurants do |rf| %>
-            <% Restaurant.all.each do |restaurant| %>
+          <% Restaurant.all.each do |restaurant| %>
             <label>
-            <%= rf.check_box "name", { multiple: true }, restaurant.name, nil %>
+            <%= f.radio_button "restaurant_id", restaurant.id %>
             <br>
             <%= restaurant.name %>
             <br>
@@ -30,7 +29,6 @@
             <%= restaurant.category %>
             <br>
           </label>
-        <% end  %>
         <% end %>
      </div>
      </div>

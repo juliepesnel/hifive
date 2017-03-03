@@ -52,8 +52,10 @@
     </div>
       <div class="row text-center testx">
          <div class="col-xs-12 col-md-12">
-         <%= link_to 'Confirm', participation_path(@participation, participation: {status: :confirmed}), method: :patch, class: "btn-confirm" %>
-         <%= link_to 'Declined', participation_path(@participation, participation: {status: :declined}), method: :patch, class: "btn-declined"%>
+          <% if current_user != @event.user %>
+           <%= link_to 'Confirm', participation_path(@participation, participation: {status: :confirmed}), method: :patch, class: "btn-confirm" %>
+           <%= link_to 'Declined', participation_path(@participation, participation: {status: :declined}), method: :patch, class: "btn-declined"%>
+          <% end %>
          </div>
         </div>
        <div class="row text-center">
