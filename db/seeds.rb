@@ -47,6 +47,7 @@ users = [
  last_name: "Le Pen",
  email: "JM@gmail.com",
  password: "123456",
+ facebook_picture_url: "https://randomuser.me/api/portraits/men/1.jpg",
  },
 
 {
@@ -54,6 +55,7 @@ users = [
  last_name: "Le Pen",
  email: "marine@gmail.com",
  password: "123456",
+ facebook_picture_url: "https://randomuser.me/api/portraits/women/90.jpg",
  },
 
 {
@@ -61,6 +63,7 @@ users = [
  last_name: "Le Pan",
  email: "Jules@gmail.com",
  password: "123456",
+ facebook_picture_url: "https://randomuser.me/api/portraits/men/1.jpg",
  },
 
 {
@@ -68,6 +71,7 @@ users = [
  last_name: "Le Don",
  email: "lucie@gmail.com",
  password: "123456",
+ facebook_picture_url: "https://randomuser.me/api/portraits/women/90.jpg",
  }
 ]
 
