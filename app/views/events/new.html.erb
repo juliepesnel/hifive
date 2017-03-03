@@ -1,12 +1,11 @@
 <div class="container">
- <%= simple_form_for(@event) do |f| %>
-       <%= f.simple_fields_for :participations do |uf| %>
-         <%= uf.input :user_ids, collection: User.all, label_method: :first_name, as: :check_boxes%>
-       <% end %>
-   <%= f.association :restaurant %>
-   <%= f.input :happen_at, :input_html => { :value => DateTime.now.strftime("%d/%m/%Y - %H:%M %p")}, :as => :string %> %>
-   <%= f.input :due_at %>
-   <%= f.button :submit %>
- <% end %>
+  <%= simple_form_for(@event) do |f| %>
+    <%= f.simple_fields_for :participations do |uf| %>
+      <%= uf.input :user_ids, collection: User.all, label_method: :first_name  %>
+    <% end %>
+    <%= f.association :restaurant %>
+    <%= f.input :happen_at, as: :datepicker %>
+    <%= f.input :due_at %>
+    <%= f.button :submit %>
+  <% end %>
 </div>
-

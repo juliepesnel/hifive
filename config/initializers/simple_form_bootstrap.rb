@@ -137,6 +137,16 @@ SimpleForm.setup do |config|
       ba.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
     end
   end
+
+  config.wrappers :checkbox, tag: 'div', class: 'checkbox', error_class: "has-error" do |b|
+    b.use :html5
+    b.wrapper tag: :label do |ba|
+      ba.use :input
+      ba.use :label_text
+    end
+    b.use :hint,  wrap_with: { tag: :p, class: "help-block" }
+    b.use :error, wrap_with: { tag: :span, class: "help-block text-danger" }
+  end
   # Wrappers for forms and inputs using the Bootstrap toolkit.
   # Check the Bootstrap docs (http://getbootstrap.com)
   # to learn about the different styles for forms and inputs,
