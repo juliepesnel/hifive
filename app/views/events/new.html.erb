@@ -1,8 +1,17 @@
 <div class="container">
   <%= simple_form_for(@event) do |f| %>
-    <%= f.simple_fields_for :participations do |uf| %>
-      <%= uf.input :user_ids, collection: User.all, label_method: :first_name  %>
-    <% end %>
+
+    <div class="selectable_users">
+      <%= f.fields_for :participations do |uf| %>
+        <% User.all.each do |user| %>
+          <label>
+            <%= uf.check_box "user_ids", { multiple: true }, user.id, nil %>
+            <%= avatar_image_tag user %>
+            <%= user.first_name %>
+          </label>
+        <% end %>
+      <% end %>
+    </div>
     <%= f.association :restaurant %>
     <%= f.input :happen_at, as: :datepicker %>
     <%= f.input :due_at %>
