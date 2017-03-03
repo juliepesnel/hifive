@@ -1,14 +1,15 @@
 
-
 body {
  box-sizing: border-box;
  font-family: 'Open Sans', sans-serif;
  font-size: 16px;
 }
 
-.container {
- max-width: 100%;
- width: 50rem;
+.container-index {
+     width: 100%;
+    padding-left: 31%;
+    padding-right: 31%;
+    padding-top: 27px;
 }
 
 h1, h2 {
@@ -16,7 +17,7 @@ h1, h2 {
 }
 
 
-.card {
+.card-index {
     background-color: #fff;
  border-radius: 2px;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16),
@@ -121,10 +122,16 @@ h1, h2 {
   opacity: 0.1;
 }
 
-.avatar {
-  position: absolute;
-  left: 90px;
-  top: 24px;
+.avatar-index {
+    position: absolute;
+    left: 54px;
+    top: 14px;
+    border-radius: 50%;
+    width-max: 10px;
+    max-width: 70px;
+    max-height: 57px;
+    padding: -6%;
+    margin-right: 46%;
 }
 
 .card-restaurant{
