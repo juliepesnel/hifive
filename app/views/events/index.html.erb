@@ -2,11 +2,11 @@
 <h1>List of events</h1>
 </div>
 
- <div class="container">
-  <div class="row">
+ <div class="container-index">
+  <div class="row-index">
    <% @events.each do |event| %>
      <div class="col-xs-12">
-       <div class="card card--evening">
+       <div class="card-index card--evening">
         <%= link_to "", event_path(event), class: "card-link" %>
 
            <div class="card__date">
@@ -22,8 +22,12 @@
         </span>
            </div>
            <div class="card__content">
-           <%= avatar_image_tag(current_user, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
-           <h2><strong><%= event.user.first_name  %></strong></h2>
+           <div>
+            <%= avatar_image_tag(current_user, class: "avatar-index dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
+           </div>
+           <div>
+            <h2><strong><%= event.user.first_name  %></strong></h2>
+           </div>
            <div class="inviting">
            Invites you to
            </div>
@@ -42,11 +46,11 @@
    <% end %>
    </div>
  </div>
- <div class="container">
-    <div class="row">
+ <div class="container-index">
+    <div class="row-index">
      <% @cancelled_events.each do |cancelled_event| %>
        <div class="col-xs-12">
-           <div class="card card--evening">
+           <div class="card-index card--evening">
              <%= link_to "", event_path(cancelled_event), class: "card-link" %>
                <div class="card__date">
                  <span class="card__date__weekday">
@@ -60,7 +64,7 @@
                  </span>
                </div>
                <div class="card__content">
-                 <%= avatar_image_tag(current_user, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
+                 <%= avatar_image_tag(current_user, class: "avatar-index dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
                  <h2><strong><%= cancelled_event.user.first_name  %></strong></h2>
                <div class="inviting">
                    Invites you to
