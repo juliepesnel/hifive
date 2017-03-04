@@ -49,44 +49,75 @@
   color: red;
 }
 .btn-maggl {
-  color: #00E8BB;
-  border: 1px solid #00E8BB;
   position: absolute;
   bottom: 20px;
   right: 10px;
 }
 
 .btn-login {
-  color: #00E8BB;
-  border: 1px solid #00E8BB;
+  color: #FF33cc;
   border-radius: 50px;
-  font-weight: lighter;
+  font-weight: bold;
   font-size: 14px;
-  opacity: 0.6;
+  opacity: 1;
   background-color: white;
 }
 
 .btn-login:hover {
-  opacity: 1;
+  opacity: 0.6;
   text-decoration: none;
-  color: #00E8BB;
+  color: #FF33CC;
   background-color: none;
 }
 
 
 .btn-signfb {
   color: #2381D0;
-  border: 1px solid #2381D0;
   border-radius: 50px;
-  font-weight: lighter;
+  font-weight: bold;
   font-size: 14px;
-  opacity: 0.6;
+  opacity: 1;
+  background-color: white;
 }
 .btn-signfb:hover {
-  opacity: 1;
+  opacity: .6;
   text-decoration: none;
   color: #2381D0;
 }
+
+.btn-medium-navbar {
+  color: #66FF99;
+  border: 2px solid #66FF99;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 14px;
+  opacity: 1;
+  background-color: white;
+}
+.btn-medium-navbar:hover {
+  opacity: 0.6;
+  text-decoration: none;
+  color: #f7bb07;
+}
+
+
+.btn-signup {
+  color: #66FF99;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 14px;
+  opacity: 1;
+  background-color: white;
+}
+.btn-signup:hover {
+  opacity: 0.6;
+  text-decoration: none;
+  color: #66FF99;
+}
+
+
 
 .positionning {
   position: relative;
@@ -96,3 +127,4 @@ a {
   display: inline-block;
 
 }
+

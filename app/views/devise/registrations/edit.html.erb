@@ -1,11 +1,10 @@
 
 <div class="container">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <div class="row">
-        <div class="form-inputs">
-          <div class="col-xs-8">
-
+  <div class="pot col-xs-8">
+    <h2>Edit <%= resource_name.to_s.humanize %></h2>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <div class="row">
+          <div class="form-inputs">
             <%= f.error_notification %>
             <div class="row">
               <div class="col-sm-6">
@@ -40,11 +39,11 @@
                 <div class="form-input col-xs-12 col-sm-6 text-left">
                   <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
                 </div>
-                  <%= f.button :submit, "Save Changes", class: 'btn btn-maggl' %>
+                  <%= f.button :submit, "Save Changes", class: 'btn btn-login btn-maggl' %>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+  </div>
 </div>
