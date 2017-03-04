@@ -62,6 +62,6 @@ private
  end
 
  def event_params
-   params.require(:event).permit(:happen_at, :canceled_at, :due_at, :restaurant_id)
+   params.require(:event).permit(:happen_at, :canceled_at, :due_at, :restaurant_id, :name)
  end
 end

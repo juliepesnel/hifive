@@ -3,15 +3,17 @@
     <div class="col-xs-12 text-center">
       <%= simple_form_for(@event) do |f| %>
         <div class="selectable_users">
-          <%= f.fields_for :participations do |uf| %>
-            <% User.all.each do |user| %>
-              <label>
-                <%= uf.check_box "user_ids", { multiple: true }, user.id, nil %>
-                <%= avatar_image_tag user %>
-                <%= user.first_name %>
-              </label>
+          <div class="card-selectable-users">
+            <%= f.fields_for :participations do |uf| %>
+              <% User.all.each do |user| %>
+                <label>
+                  <%= uf.check_box "user_ids", { multiple: true }, user.id, nil %>
+                  <%= avatar_image_tag user %>
+                  <%= user.first_name %>
+                </label>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
       </div>
     </div>
@@ -21,13 +23,9 @@
           <% Restaurant.all.each do |restaurant| %>
             <label>
             <%= f.radio_button "restaurant_id", restaurant.id %>
-            <br>
             <%= restaurant.name %>
-            <br>
             <%= image_tag restaurant.picture %>
-            <br>
             <%= restaurant.category %>
-            <br>
           </label>
         <% end %>
      </div>
