@@ -6,7 +6,6 @@ before_action :set_event, only: [:show, :edit, :update, :destroy]
  def index
   @events = current_user.events.where(canceled_at: nil)
   @cancelled_events = current_user.events.where.not(canceled_at: nil)
-  @restaurants = Restaurant.where(id:2)
 end
 
  def new
