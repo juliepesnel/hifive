@@ -4,8 +4,8 @@ before_action :set_event, only: [:show, :edit, :update, :destroy]
 
 
  def index
- @events = current_user.events.where(canceled_at: nil)
- @cancelled_events = current_user.events.where.not(canceled_at: nil)
+  @events = current_user.events.where(canceled_at: nil)
+  @cancelled_events = current_user.events.where.not(canceled_at: nil)
 end
 
  def new
@@ -26,14 +26,14 @@ end
  end
 
  def show
-    # @event = Event.find(params[:id]).includes(:user, participations: {:user})
-    @creator = @event.user
-    @happening = @event.happen_at
-    @ultimatum = @event.due_at
-    @choosen_place = @event.restaurant
-    @guests = @event.participations
-    @participation = current_user.participations.find_by(event: @event)
- end
+  # @event = Event.find(params[:id]).includes(:user, participations: {:user})
+  @creator = @event.user
+  @happening = @event.happen_at
+  @ultimatum = @event.due_at
+  @choosen_place = @event.restaurant
+  @guests = @event.participations
+  @participation = @event.participations.find_by(user: current_user)
+end
 
  def edit
   @event.canceled_at = DateTime.now
@@ -61,6 +61,6 @@ private
  end
 
  def event_params
-   params.require(:event).permit(:happen_at, :canceled_at, :due_at, :restaurant_id)
+   params.require(:event).permit(:happen_at, :canceled_at, :due_at, :restaurant_id, :name)
  end
 end
