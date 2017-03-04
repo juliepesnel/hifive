@@ -10,11 +10,11 @@
 
             <div class="row">
               <div class="col-xs-6 col-md-6">
-                <%= image_tag 'imgres.jpg' %>
+                <%= image_tag 'imgres.jpg', class: "photo_show text-center"%>
               </div>
 
               <div class="row">
-                <div class="text-left placeandtime">
+                <div class="text-center placeandtime">
                   <div class="col-xs-6 col-md-6">
                     <p><%= "occuring at" + " " + @choosen_place.name %></p>
                     <p><%= "on" + " " + @happening.strftime("%d/%m/%Y %H:%M") %></p>
