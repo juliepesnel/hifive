@@ -19,34 +19,8 @@
   </head>
 
   <body>
-  <div id="wrapper-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path 'main.jpg' %>');">
-
-    <div class="container-home">
-      <h1>We're working hard to bring you the best. Be ready in:</h1>
-      <div id="clockdiv">
-        <div>
-          <span class="days"></span>
-          <div class="smalltext">Days</div>
-        </div>
-        <div>
-          <span class="hours"></span>
-          <div class="smalltext">Hours</div>
-        </div>
-        <div>
-          <span class="minutes"></span>
-          <div class="smalltext">Minutes</div>
-        </div>
-        <div>
-          <span class="seconds"></span>
-          <div class="smalltext">Seconds</div>
-        </div>
-      </div>
-      <br>
-      <br>
-      <div class="button-create">
-      <%= link_to t(".top_call_to_action", default: "Create an event"), new_event_path, class: "button-create-pad" %>
-      </div>
-    </div>
-   </div>
+  <div id="center">
+    <%= link_to t(".top_call_to_action", default: "Create an event"), new_event_path, class: "button-create button-create-pad" %>
+ </div>
 </body>
 </html>
