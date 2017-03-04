@@ -8,12 +8,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
-  <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
-    <%= render 'shared/footer' %>
-    <%= javascript_include_tag 'application' %>
-    <%= cloudinary_js_config %>
+  <body class="colorize">
+    <div id="wrapper-smaow">
+      <div id="header">
+        <%= render 'shared/navbar' %>
+        <%= render 'shared/flashes' %>
+      </div>
+      <div id="" ="content">
+        <%= yield %>
+      </div>
+      <div id="footer">
+        <%= render 'shared/footer' %>
+      </div>
+      <%= javascript_include_tag 'application' %>
+      <%= cloudinary_js_config %>
+    </div>
   </body>
 </html>
