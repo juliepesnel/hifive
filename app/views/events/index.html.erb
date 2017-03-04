@@ -32,6 +32,7 @@
                 <div class="inviting hidden-xs">
                   Invites you to
 
+
                 <div class="due_date">
                   <%= event.due_at.strftime("Answer before %d/%m/%Y %H:%M") %>
                 </div>
@@ -39,18 +40,21 @@
             </div>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
+</div>
 </div>
 
 
  <div class="container">
     <div class="row">
+      <div class= text-center>
+
      <% @cancelled_events.each do |cancelled_event| %>
        <div class="col-xs-12">
-           <div class="card-index card--evening">
-             <%= link_to "", event_path(cancelled_event), class: "card-link" %>
+          <div class="card-index card--evening">
+            <%= link_to "", event_path(cancelled_event), class: "card-link" %>
                <div class="col-xs-1">
                <div class="card__date">
                  <span class="card__date__weekday">
@@ -63,34 +67,35 @@
                    <%= cancelled_event.happen_at.strftime("%Y")%>
                  </span>
                </div>
-               </div>
-               <div class="col-xs-10">
+              </div>
+              <div class="col-xs-10">
                <div class="card__content">
-               <div class="row">
+                <div class="row">
                   <div class="col-xs-3">
-                 <%= avatar_image_tag(current_user, class: "avatar-index") %>
-                 <h2><strong><%= cancelled_event.user.first_name  %></strong></h2>
+                    <%= avatar_image_tag(current_user, class: "avatar-index") %>
                   </div>
+                  <div class="col-xs-9">
+                    <h2><strong><%= cancelled_event.user.first_name  %></strong></h2>
                   </div>
-               <div class="inviting hidden-xs">
+                </div>
+                <div class="inviting hidden-xs">
                    Invites you to
-               </div>
-               <%= image_tag "imgres.jpg", class: "card-restaurant" %>
-               <div style="color: red">
-                 <strong><%= "EVENT CANCELLED" %></strong>
-               </div>
-               <div class="restaurant_name">
+
+                <div style="color: red">
+                   <strong><%= "EVENT CANCELLED" %></strong>
+                </div>
+                <div class="restaurant_name">
                  <strong>"<%= cancelled_event.restaurant.name%>"</strong>
-               </div>
-                 <div class="due_date">
+                </div>
+                <div class="due_date">
                  <%= cancelled_event.due_at.strftime("Answer before %d/%m/%Y %H:%M") %>
-                 </div>
+                </div>
                </div>
               </div>
            </div>
          </div>
-       <% end %>
-     </div>
+       </div>
+     <% end %>
    </div>
 </div>
 
