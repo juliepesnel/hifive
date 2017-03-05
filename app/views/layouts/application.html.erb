@@ -10,19 +10,11 @@
     <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
   </head>
   <body >
-    <div id="wrapper-home" class="colorize">
-      <div id="header">
-        <%= render 'shared/navbar' %>
-        <%= render 'shared/flashes' %>
-      </div>
-      <div id="" ="content">
-        <%= yield %>
-      </div>
-      <div id="footer">
-        <%= render 'shared/footer' %>
-      </div>
-      <%= javascript_include_tag 'application' %>
-      <%= cloudinary_js_config %>
-    </div>
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
+    <%= yield %>
+    <%= render 'shared/footer' %>
+    <%= javascript_include_tag 'application' %>
+    <%= cloudinary_js_config %>
   </body>
 </html>
