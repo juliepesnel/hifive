@@ -98,7 +98,7 @@ events = [
 
    {
     restaurant: Restaurant.all.sample,
-    user: User.first,
+    user: User.second,
     happen_at: DateTime.now + (5/24.0),
     due_at: DateTime.now + (2/24.0)
   }
