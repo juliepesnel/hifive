@@ -1,8 +1,12 @@
 <div class="container">
   <div class="row">
     <div class= text-center>
-      <h1>List of events</h1>
-      <% @participations.each do |participation, event| %>
+      
+      <h1>LIST OF EVENTS</h1>
+      <% @events.each do |event| %>
+
+     
+
         <div class="col-xs-12">
           <div class="card-index card--evening ">
             <%= link_to "", event_path(participation.event), class: "card-link" %>
