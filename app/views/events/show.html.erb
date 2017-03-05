@@ -9,59 +9,72 @@
     <div class="row" >
       <div class="col-xs-12 col-md-8">
         <%= image_tag @choosen_place.picture, class: "img_restaurant_show" %>
-      </div>
-      <div class="col-xs-12 col-md-4">
-        <%= @choosen_place.name %>
-        <%= "on" + " " + @happening.strftime("%d/%m/%Y %H:%M") %>
+        <p class="title"><%= @choosen_place.name %></p>
       </div>
     </div>
-
-      <div class="row">
-        <div class="col-xs-12 col-md-12">
-          <div class="text-center guests">
-            <% @guests.each do |guest| %>
-            <div class="col-xs-4 col-md-4" >
-              <p><%= image_tag guest.user.facebook_picture_url, class: "avatar" %></p>
-              <p><%= guest.user.first_name %></p>
-              <% if guest.status == "confirmed" %>
-                <div class="text-confirmed"><%= guest.status %></div>
-              <% elsif guest.status == "declined" %>
-                <div class="text-declined"><%= guest.status %></div>
-              <% else %>
-            <div class="text-pending"><%= guest.status %></div>
-            <% end %>
-            </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-
 
     <div class="row">
-      <div class="col-xs-12 col-md-12">
-        <div class="ultimatum text-center">
-          <p><%= @ultimatum.strftime("Please answer before %d/%m/%Y %H:%M") %></p>
+      <div class="col-xs-12 col-md-6">
+        <div class="text-center guests">
+          <% @guests.each do |guest| %>
+          <div class="col-xs-4 col-md-4" >
+            <div class="badge-container">
+              <p><%= image_tag guest.user.facebook_picture_url, class: "avatar" %></p>
+              <% if guest.status == "confirmed" %>
+                <div class="badge badge-green"></div>
+              <% elsif guest.status == "declined" %>
+                <div class="badge badge-red"></div>
+              <% else %>
+                <div class="badge badge-blue">?</div>
+            <% end %>
+            <p><%= guest.user.first_name %></p>
+          </div>
+          <% end %>
         </div>
-      </div>
-    </div>
-
-
-    <div class="row text-center testx">
-     <div class="col-xs-12 col-md-12">
-      <% if current_user != @event.user %>
-       <%= link_to 'Confirm', participation_path(@participation, participation: {status: :confirmed}), method: :patch, class: "btn-confirm" %>
-       <%= link_to 'Declined', participation_path(@participation, participation: {status: :declined}), method: :patch, class: "btn-declined"%>
-      <% end %>
-     </div>
-    </div>
-
-    <div class="row text-center">
-     <div class="col-xs-12 col-md-12">
-      <%= link_to 'back to list', events_path, class: "btn-medium"%>
-      <%= link_to 'Cancel event', edit_event_path(@event), class: "btn-medium" %>
-      <%= link_to 're-launch event', event_path(@event, event: {canceled_at: :nil}), method: :patch, class: "btn-medium" %>
       </div>
     </div>
   </div>
- </div>
- </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <div class="ultimatum text-center">
+        <% if current_user != @event.user %>
+          <h4><%= @ultimatum.strftime("Please answer before %A %d %B %H:%M") %></h4>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row text-center testx">
+   <div class="col-xs-12 col-md-12">
+    <% if current_user != @event.user %>
+     <%= link_to 'Confirm', participation_path(@participation, participation: {status: :confirmed}), method: :patch, class: "btn-confirm" %>
+     <%= link_to 'Declined', participation_path(@participation, participation: {status: :declined}), method: :patch, class: "btn-declined"%>
+    <% end %>
+   </div>
+  </div>
+
+  <div class="row text-center">
+    <div class="col-xs-12 col-md-12">
+      <%= link_to 'Back to list', events_path, class: "btn-medium"%>
+      <% if @event.canceled_at %>
+        <%= link_to 'Re-launch event', event_path(@event, event: {canceled_at: :nil}), method: :patch, class: "btn-medium" %>
+      <% else %>
+        <%= link_to 'Cancel event', edit_event_path(@event), class: "btn-medium" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="thumbnail">
+  <div class="date">
+    <div class="day">
+      <%= @happening.strftime("%d") %>
+    </div>
+    <div class="month">
+      <%= @happening.strftime("%^a") %>
+    </div>
+  </div>
+</div>
