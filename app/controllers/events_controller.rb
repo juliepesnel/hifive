@@ -28,7 +28,7 @@ end
 
  def show
   # @event = Event.find(params[:id]).includes(:user, participations: {:user})
-  @creator = @event.user
+  @creator = @event.user.first_name
   @happening = @event.happen_at
   @ultimatum = @event.due_at
   @choosen_place = @event.restaurant

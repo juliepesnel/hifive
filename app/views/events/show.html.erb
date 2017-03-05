@@ -1,70 +1,81 @@
-
 <div class="container">
   <div class="container_show">
     <div class="row" >
-        <div class="col-xs-12 col-md-12">
-          <div class="title">
-            <h1><%= @creator.first_name + "'s event" %></h1>
+      <div class="col-xs-12 col-md-12">
+        <h1><%= @creator + "'s event" %></h1>
+      </div>
+    </div>
+    <div class="img_restaurant_show">
+      <div class="row" >
+        <div class="col-xs-12 col-md-8">
+          <p class="img_show">
+            <%= image_tag @choosen_place.picture%>
+          </p>
+          <p class="title">
+            <%= @choosen_place.name %>
+          </p>
+        </div>
+        <div class="date">
+          <div class="day">
+            <%= @happening.strftime("%d") %>
           </div>
-
-            <div class="row">
-              <div class="col-xs-6 col-md-6">
-                <%= image_tag 'imgres.jpg', class: "photo_show text-center"%>
-              </div>
-
-              <div class="row">
-                <div class="text-center placeandtime">
-                  <div class="col-xs-6 col-md-6">
-                    <p><%= "occuring at" + " " + @choosen_place.name %></p>
-                    <p><%= "on" + " " + @happening.strftime("%d/%m/%Y %H:%M") %></p>
-                  </div>
-                 </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="text-center guests">
-                <div class="col-xs-12 col-md-12">
-                  <% @guests.each do |guest| %>
-                    <div class="col-xs-4 col-md-4" >
-                      <p><%= guest.user.first_name %></p>
-                    <% if guest.status == "confirmed" %>
-                      <div class="text-confirmed"><%= guest.status %></div>
-                    <% elsif guest.status == "declined" %>
-                      <div class="text-declined"><%= guest.status %></div>
-                    <% else %>
-                      <div class="text-pending"><%= guest.status %></div>
-                    <% end %>
-                    </div>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-
-          <div class="row">
-            <div class="col-xs-12 col-md-12">
-              <div class="ultimatum text-center">
-                <p><%= @ultimatum.strftime("Please answer before %d/%m/%Y %H:%M") %></p>
-            </div>
+          <div class="month">
+            <%= @happening.strftime("%^a") %>
           </div>
         </div>
       </div>
     </div>
-      <div class="row text-center testx">
-         <div class="col-xs-12 col-md-12">
-          <% if current_user != @event.user %>
-           <%= link_to 'Confirm', participation_path(@participation, participation: {status: :confirmed}), method: :patch, class: "btn-confirm" %>
-           <%= link_to 'Declined', participation_path(@participation, participation: {status: :declined}), method: :patch, class: "btn-declined"%>
+
+    <div class="row">
+      <div class="text-center guests">
+        <div class="col-xs-12 col-md-6">
+          <% @guests.each do |guest| %>
+            <div class="col-xs-4">
+              <div class="badge-container-show">
+                <p><%= image_tag guest.user.facebook_picture_url, class: "avatar" %></p>
+                <% if guest.status == "confirmed" %>
+                  <div class="badge badge-green"></div>
+                <% elsif guest.status == "declined" %>
+                  <div class="badge badge-red"></div>
+                <% else %>
+                  <div class="badge badge-bordered">?</div>
+                <% end %>
+                <p><%= guest.user.first_name %></p>
+              </div>
+            </div>
           <% end %>
-         </div>
-        </div>
-       <div class="row text-center">
-         <div class="col-xs-12 col-md-12">
-         <%= link_to 'back to list', events_path, class: "btn-medium"%>
-         <%= link_to 'Cancel event', edit_event_path(@event), class: "btn-medium" %>
-         <%= link_to 're-launch event', event_path(@event, event: {canceled_at: :nil}), method: :patch, class: "btn-medium" %>
         </div>
       </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <div class="ultimatum text-center">
+          <% if current_user != @event.user %>
+            <h4><%= @ultimatum.strftime("Please answer before %A %d %B %H:%M") %></h4>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row text-center testx">
+     <div class="col-xs-12 col-md-12">
+      <% if current_user != @event.user %>
+       <%= link_to 'Confirm', participation_path(@participation, participation: {status: :confirmed}), method: :patch, class: "btn-confirm" %>
+       <%= link_to 'Declined', participation_path(@participation, participation: {status: :declined}), method: :patch, class: "btn-declined"%>
+      <% end %>
+     </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-xs-12 col-md-12">
+        <%= link_to 'Back to list', events_path, class: "btn-medium"%>
+        <% if @event.canceled_at %>
+          <%= link_to 'Re-launch event', event_path(@event, event: {canceled_at: :nil}), method: :patch, class: "btn-medium" %>
+        <% else %>
+          <%= link_to 'Cancel event', edit_event_path(@event), class: "btn-medium" %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
-
