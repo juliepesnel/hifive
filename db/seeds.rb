@@ -98,7 +98,7 @@ events = [
 
    {
     restaurant: Restaurant.all.sample,
-    user: User.first,
+    user: User.second,
     happen_at: DateTime.now + (5/24.0),
     due_at: DateTime.now + (2/24.0)
   }
@@ -120,12 +120,6 @@ participations = [
 },
 
 {
-  user: User.first,
-  event: Event.first,
-  status: 2
-},
-
-{
   user: User.second,
   event: Event.second,
   status: 0
@@ -135,12 +129,6 @@ participations = [
   user: User.third,
   event: Event.second,
   status: 1
-},
-
-{
-  user: User.first,
-  event: Event.second,
-  status: 2
 },
 
 {
