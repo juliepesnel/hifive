@@ -3,9 +3,9 @@ class ParticipationsController < ApplicationController
   def update
     participation = Participation.find(params[:id])
     if participation.update(participation_params)
-      flash[:notice] = 'thank you for answering'
+      flash[:notice] = 'Thank you for answering'
     else
-      flash[:alert] = 'something went wrong'
+      flash[:alert] = 'Something went wrong'
     end
       redirect_to event_path(participation.event)
   end

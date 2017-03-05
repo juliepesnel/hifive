@@ -19,12 +19,12 @@ class User < ApplicationRecord
     user_params = user_params.to_h
 
     user = User.where(provider: auth.provider, uid: auth.uid).first
-    user ||= User.where(email: auth.info.email).first # User did a regular sign up in the past.
+    user ||= User.where(email: auth.info.email).first
     if user
       user.update(user_params)
     else
       user = User.new(user_params)
-      user.password = Devise.friendly_token[0,20]  # Fake password for validation
+      user.password = Devise.friendly_token[0,20]
       user.save
     end
 
