@@ -120,12 +120,6 @@ participations = [
 },
 
 {
-  user: User.first,
-  event: Event.first,
-  status: 2
-},
-
-{
   user: User.second,
   event: Event.second,
   status: 0
@@ -135,12 +129,6 @@ participations = [
   user: User.third,
   event: Event.second,
   status: 1
-},
-
-{
-  user: User.first,
-  event: Event.second,
-  status: 2
 },
 
 {
