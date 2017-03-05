@@ -6,6 +6,7 @@ before_action :set_event, only: [:show, :edit, :update, :destroy]
  def index
   @events = current_user.events.where(canceled_at: nil)
   @cancelled_events = current_user.events.where.not(canceled_at: nil)
+  @participations = current_user.participations
 end
 
  def new
@@ -27,7 +28,7 @@ end
 
  def show
   # @event = Event.find(params[:id]).includes(:user, participations: {:user})
-  @creator = @event.user
+  @creator = @event.user.first_name
   @happening = @event.happen_at
   @ultimatum = @event.due_at
   @choosen_place = @event.restaurant

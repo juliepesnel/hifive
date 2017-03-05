@@ -9,4 +9,6 @@ module ApplicationHelper
       image_tag "http://placekitten.com.s3.amazonaws.com/homepage-samples/200/286.jpg", options
     end
   end
+
 end
+

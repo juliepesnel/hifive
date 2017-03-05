@@ -1,44 +1,45 @@
-
-
-
 .container_show {
-  border-left: 6px solid #FFFF00;
   border-radius: 2px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16),
-              0 2px 10px 0 rgba(0, 0, 0, 0.12);
   margin: 1.5rem 0;
   padding: 15px ;
-}
-.photo_show {
-width: 100px;
-height: 100px;
-}
-
-
-.title {
-
-
-}
-
-.placeandtime {
-
-
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .guests {
   padding: 10px;
 }
 
+.img_restaurant_show {
+  position: relative;
+}
+
+.img_show {
+  border-left: 6px solid #FFFF00;
+}
+
+.img_show img {
+  width: 100%;
+}
+
+
+.title {
+  font-size: 20px;
+  font-weight: lighter;
+  position: absolute;
+  bottom: 10px;
+  left: 40px;
+  color: white;
+}
+
+.placeandtime {
+}
 
 .ultimatum {
-
 }
 
 .confirm {
-
 }
 .buttonsrow1 {
-
 }
 
 .text-confirmed{
@@ -56,5 +57,63 @@ font-weight: bold;
 
 .testx {
 margin-bottom: 20px;
+}
 
+.date {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  background: #00E8BB;
+  width: 55px;
+  height: 55px;
+  padding: 7.5px 0;
+  border-radius: 100%;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+}
+
+.day {
+  font-size: 16px;
+}
+
+.month {
+  font-size: 12px;
+}
+
+.badge-container-show {
+  position: relative;
+  line-height: 30px;
+  width: 30px;
+}
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-size: 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  width: 18px;
+  text-align: center;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+.badge-red {
+  background: #EE5F5B;
+}
+.badge-green {
+  background: #32B796;
+}
+.badge-blue {
+  background: #469AE0;
+}
+.badge-black {
+  background: black;
+}
+.badge-bordered {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
 }

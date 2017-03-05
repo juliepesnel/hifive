@@ -9,7 +9,6 @@
   align-items: center;
   justify-content: space-between;
 }
-
 /* Optional class to fix the navbar on top */
 .navbar-wagon-fixed {
   position: fixed;
@@ -18,36 +17,32 @@
   z-index: 1;
   width: 100%;
 }
-
 /* Navbar logo */
 .navbar-wagon-brand img {
   width: 50px;
 }
-
 /* Navbar right section (with form, links, button) */
 .navbar-wagon-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 /* Navbar item */
 .navbar-wagon-item {
   flex: 0 1 auto;
   cursor: pointer;
   padding: 0 20px;
 }
-
 /* Navbar standard link */
 .navbar-wagon-link {
   color: #616668;
   font-size: 14px;
 }
+
 .navbar-wagon-link:hover {
   color: #da552f;
   text-decoration: none;
 }
-
 /* Navbar right button */
 .navbar-wagon-button {
   margin-left: 10px;
@@ -59,12 +54,12 @@
   font-size: 14px;
   border: 2px solid #FFC300;
 }
+
 .navbar-wagon-button:hover {
   color: white;
   background: #FFC300;
   border-color: #ffcc00;
 }
-
 /* Navbar search form */
 .navbar-wagon-search {
   flex: 0 1 300px;
@@ -73,6 +68,7 @@
   padding: 0 10px;
   position: relative;
 }
+
 .navbar-wagon-search-btn {
   line-height: 40px;
   color: #E6E6E6;
@@ -83,6 +79,7 @@
   top: -2px;
   z-index: 1;
 }
+
 .navbar-wagon-search-input {
   flex: 0 1 300px;
   transition: all 0.15s ease;
@@ -95,16 +92,17 @@
   font-size: 14px;
   outline: none;
 }
+
 .navbar-wagon-search-input:focus  {
   border: 1px solid #CCCCCC;
 }
-
 /* Navbar dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
 }
+
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
@@ -113,10 +111,12 @@
   line-height: 22px !important;
   padding: 10px 20px;
 }
+
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;
   color: black !important;
 }
+
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
   height: 10px;
@@ -130,7 +130,6 @@
   border-top: 1px solid #E6E6E6;
 }
 
-
 .btn-medium-navbar {
   color: #f7bb07;
   border: 1px solid #f7bb07;
@@ -140,13 +139,15 @@
   font-size: 14px;
   opacity: 0.6;
 }
+
 .btn-medium-navbar:hover {
   opacity: 1;
   text-decoration: none;
   color: #f7bb07;
 }
- .logo {
-   font-family: "Bungee Shade";
-    color: black;
-    font-size: 175%;
+
+.logo {
+  font-family: "Bungee Shade";
+  color: black;
+  font-size: 175%;
 }
