@@ -1,56 +1,16 @@
 <div class="container">
   <div class="row">
     <div class= text-center>
+      
       <h1>LIST OF EVENTS</h1>
       <% @events.each do |event| %>
-        <div class="col-xs-12">
-          <div class="card-index card--evening">
-            <%= link_to "", event_path(event), class: "card-link" %>
-            <div class="col-xs-1">
-              <div class="card__date">
-                <span class="card__date__weekday">
-                  <%= event.happen_at.strftime("%d")%>
-                </span>
-                <span class="card__date__day">
-                  <%= event.happen_at.strftime("%m")%>
-                </span>
-                <span class="card__date__month">
-                  <%= event.happen_at.strftime("%Y")%>
-                </span>
-              </div>
-            </div>
-            <div class="col-xs-10 text-center">
-              <div class="card__content">
-                <div class="row">
-                  <div class="col-xs-3">
-                      <%= image_tag event.restaurant.picture, class: "restaurant_picture" %>
-                  </div>
-                  <div class="col-xs-9 col-md-9 first_name_index">
-                   <div class="restaurant_name">
-                    <p><%="Your event:" + " " + event.restaurant.name%></p>
-                  </div>
-                  <div class="due_date">
-                   <i class="fa fa-clock-o" aria-hidden="true"></i><%= " " + event.due_at.strftime("%d/%m/%Y %H:%M") %>
-                  </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    <% end %>
-  </div>
-</div>
-</div>
 
-<div class="container">
-  <div class="row">
-    <div class= text-center>
-      <% @participations.each do |participation, event| %>
+     
+
         <div class="col-xs-12">
-          <div class="card-index card--evening">
+          <div class="card-index card--evening ">
             <%= link_to "", event_path(participation.event), class: "card-link" %>
-            <div class="col-xs-1">
+            <div class="col-xs-2 card-bckgd-participation">
               <div class="card__date">
                 <span class="card__date__weekday">
                   <%= participation.event.happen_at.strftime("%d")%>
@@ -86,11 +46,54 @@
             </div>
           </div>
         </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
-</div>
 
+<div class="container">
+  <div class="row">
+    <div class= text-center>
+      <% @events.each do |event| %>
+        <div class="col-xs-12">
+          <div class="card-index card--event ">
+            <%= link_to "", event_path(event), class: "card-link" %>
+            <div class="col-xs-2 card-bckgd-event">
+              <div class="card__date">
+                <span class="card__date__weekday">
+                  <%= event.happen_at.strftime("%d")%>
+                </span>
+                <span class="card__date__day">
+                  <%= event.happen_at.strftime("%m")%>
+                </span>
+                <span class="card__date__month">
+                  <%= event.happen_at.strftime("%Y")%>
+                </span>
+              </div>
+            </div>
+            <div class="col-xs-10 text-center">
+              <div class="card__content">
+                <div class="row">
+                  <div class="col-xs-3">
+                      <%= image_tag event.restaurant.picture, class: "restaurant_picture" %>
+                  </div>
+                  <div class="col-xs-9 col-md-9 first_name_index">
+                   <div class="restaurant_name">
+                    <h4><%="Your event!:" + " " + event.restaurant.name%></h4>
+                  </div>
+                  <div class="due_date">
+                   <i class="fa fa-clock-o" aria-hidden="true"></i><%= " " + event.due_at.strftime("%d/%m/%Y %H:%M") %>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
  <div class="container">
     <div class="row">
@@ -98,9 +101,9 @@
 
      <% @cancelled_events.each do |cancelled_event| %>
        <div class="col-xs-12">
-          <div class="card-index card--evening">
+          <div class="card-index card--cancelled">
             <%= link_to "", event_path(cancelled_event), class: "card-link" %>
-               <div class="col-xs-1">
+               <div class="col-xs-2 card-bckgd-cancelled">
                <div class="card__date">
                  <span class="card__date__weekday">
                    <%= cancelled_event.happen_at.strftime("%d")%>
@@ -120,15 +123,12 @@
                     <%= image_tag cancelled_event.restaurant.picture, class: "restaurant_picture" %>
                   </div>
                   <div class="col-xs-9 col-md-9 first_name_index">
-                   <div class="event_cancelled">
-                    <%= "Event cancelled" %>
-                  </div>
-                   <div class="restaurant_name">
-                    <p><%="Your event:" + " " + cancelled_event.restaurant.name%></p>
-                  </div>
-                  <div class="due_date">
-                   <i class="fa fa-clock-o" aria-hidden="true"></i><%= " " + cancelled_event.due_at.strftime("%d/%m/%Y %H:%M") %>
-                  </div>
+                     <div class="event_cancelled">
+                      <%= "Event cancelled" %>
+                    </div>
+                     <div class="restaurant_name">
+                      <h4><%="Your event!:" + " " + cancelled_event.restaurant.name%></h4>
+                    </div>
                   </div>
                   </div>
                 </div>
