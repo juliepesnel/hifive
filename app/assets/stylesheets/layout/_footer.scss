@@ -1,10 +1,4 @@
-.footer {
 
-  padding: 20px 0;
-  line-height: 20px;
-
-
-}
 
 .container-footer {
   position:fixed;
@@ -12,30 +6,29 @@
    bottom:0px;
    height:10%;
    width:100%;
-   background-color:grey;
+   background-color: white;
 
 }
 
-.footer nav > ul {
+.container-footer nav > ul {
   font-size: 16px;
   list-style: none;
   margin: 0;
   padding: 0;
   font-weight: normal;
 }
-
-.footer nav > ul li {
+.container-footer nav > ul li {
   margin-left: 20px;
   float: left;
 }
 
-.footer nav > ul a {
+.container-footer nav > ul a {
   padding: 10px 0px;
   margin: 15px 10px 15px 0px;
-  color: rgb(154, 154, 154);
+  color: black;
 }
 
-.footer .social-area {
+.container-footer .social-area {
   padding: 15px;
 }
 
