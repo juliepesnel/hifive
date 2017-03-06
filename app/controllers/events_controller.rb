@@ -39,7 +39,7 @@ end
  def edit
   @event.canceled_at = DateTime.now
   @event.save
-  redirect_to events_path, notice: "Event cancelled"
+  redirect_to event_path(@event), notice: "Event cancelled"
 end
 
  def update

@@ -10,15 +10,38 @@
 }
 
 .img_restaurant_show {
-  position: relative;
+position: relative;
 }
 
 .img_show {
-  border-left: 6px solid #FFFF00;
+  border-left: 6px solid #FFFF00;;
 }
 
 .img_show img {
   width: 100%;
+
+}
+
+.date {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  background: #00E8BB;
+  width: 55px;
+  height: 55px;
+  padding: 7.5px 0;
+  border-radius: 100%;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+}
+
+.day {
+  font-size: 16px;
+}
+
+.month {
+  font-size: 12px;
 }
 
 
@@ -59,24 +82,49 @@ font-weight: bold;
 margin-bottom: 20px;
 }
 
-.date {
+
+.badge-container-show {
+  position: relative;
+  line-height: 30px;
+  width: 30px;
+}
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-size: 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  width: 18px;
+  text-align: center;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+.badge-red {
+  background: red;
+}
+.badge-green {
+  background: green;
+}
+.badge-blue {
+  background: #469AE0;
+}
+.badge-black {
+  background: black;
+}
+.badge-bordered {
+  background-color: blue;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+}
+
+.event_cancelled_show {
   position: absolute;
   top: 10px;
-  left: 20px;
-  background: #00E8BB;
-  width: 55px;
-  height: 55px;
-  padding: 7.5px 0;
-  border-radius: 100%;
+  right: 100px;
   color: white;
-  font-weight: 700;
-  text-align: center;
-}
-
-.day {
-  font-size: 16px;
-}
-
-.month {
-  font-size: 12px;
+  font-size: 20px;
 }
