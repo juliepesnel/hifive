@@ -10,4 +10,4 @@
 
 //= require_tree .
 
-alert('Sadly this is static...');
+
