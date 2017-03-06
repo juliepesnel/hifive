@@ -3,9 +3,11 @@
   padding: 10px 15px;
   border-radius: 50px;
   font-weight: lighter;
+
   font-size: 16px;
   opacity: 1;
   background-color: #2381D0;
+
 
 }
 
@@ -20,10 +22,12 @@
   color: white;
   padding: 10px 15px;
   border-radius: 50px;
+
   font-weight: bold;
   font-size: 16px;
   opacity: 1;
   background-color: #3CD600;
+
 
 }
 
@@ -37,19 +41,23 @@
 .btn-declined {
  color: white;
   border-radius: 50px;
+
   padding: 10px 15px;
   font-weight: bold;
   font-size: 16px;
   opacity: 1;
   background-color: #FF0000;
 
+
 }
 
 .btn-declined:hover {
   opacity: 1;
   text-decoration: none;
+
   color:#FF0000;
   background-color: white;
+
 }
 
 
@@ -95,12 +103,13 @@
   opacity: 1;
   background-color: white;
 }
+
 .btn-medium-navbar:hover {
   text-decoration: none;
   color: white;
   background-color: #3CD600;
-
 }
+
 
 .btn-signup {
   color: white;
@@ -111,12 +120,14 @@
   opacity: 1;
   background-color: #3CD600;
 }
+
 .btn-signup:hover {
   opacity: 0.6;
   text-decoration: none;
   color: #3CD600;
   background-color: white;
 }
+
 
 .btn-create {
   color: white;
@@ -134,13 +145,13 @@
 
 }
 
+
 .positionning {
   position: relative;
 }
 
 a {
   display: inline-block;
-
 }
 
 
