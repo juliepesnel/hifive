@@ -10,15 +10,38 @@
 }
 
 .img_restaurant_show {
-  position: relative;
+position: relative;
 }
 
 .img_show {
-  border-left: 6px solid #FFFF00;
+  border-left: 6px solid #FFFF00;;
 }
 
 .img_show img {
-  width: 70%;
+  width: 100%;
+
+}
+
+.date {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  background: #00E8BB;
+  width: 55px;
+  height: 55px;
+  padding: 7.5px 0;
+  border-radius: 100%;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+}
+
+.day {
+  font-size: 16px;
+}
+
+.month {
+  font-size: 12px;
 }
 
 
@@ -59,27 +82,7 @@ font-weight: bold;
 margin-bottom: 20px;
 }
 
-.date {
-  position: absolute;
-  top: 10px;
-  left: 20px;
-  background: #00E8BB;
-  width: 55px;
-  height: 55px;
-  padding: 7.5px 0;
-  border-radius: 100%;
-  color: white;
-  font-weight: 700;
-  text-align: center;
-}
 
-.day {
-  font-size: 16px;
-}
-
-.month {
-  font-size: 12px;
-}
 
 .badge-container-show {
   position: relative;
@@ -122,7 +125,7 @@ margin-bottom: 20px;
 .event_cancelled_show {
   position: absolute;
   top: 10px;
-  right: 40px;
+  right: 100px;
   color: white;
-  font-size: 40px;
+  font-size: 20px;
 }
