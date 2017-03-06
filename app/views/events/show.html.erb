@@ -11,18 +11,17 @@
     </div>
     <div class="img_restaurant_show">
       <div class="row" >
-        <div class="col-xs-12 col-md-8">
+        <div class="col-xs-12 col-md-6">
           <p class="img_show">
             <%= image_tag @choosen_place.picture%></p>
           <p class="title"><%= @choosen_place.name %></p>
-        </div>
           <h4 class="event_cancelled_show">
             <% if @event.canceled_at %>
               <%= "EVENT CANCELLED" %>
             <% else %>
               <% "" %>
             <% end %></h4>
-
+        </div>
         <div class="date">
           <div class="day">
             <%= @happening.strftime("%d") %>
@@ -30,6 +29,13 @@
           <div class="month">
             <%= @happening.strftime("%^a") %>
           </div>
+        </div>
+          <div class="col-xs-12 col-md-6">
+TITLE EVENT
+        </div>
+        <div class="col-xs-12 col-md-6">
+
+GOOGLE
         </div>
       </div>
     </div>
