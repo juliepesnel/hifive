@@ -1,85 +1,43 @@
+require 'faker'
+
 Restaurant.destroy_all
 Event.destroy_all
 Participation.destroy_all
 User.destroy_all
 
 
-restaurants = [
-  {
-    name: "Le Pressoir d'Argent",
-    address: "2, place de la Comédie",
-    phone_number: "05.56.33.33.33",
-    website: "https://www.tripadvisor.com",
-    category: "brasserie",
+
+
+
+User.create!(
+  first_name: "Marine",
+  last_name: "Petit",
+  email: "m@gmail.com ",
+  password: "123456",
+  facebook_picture_url: "http://res.cloudinary.com/wagon/image/upload/c_fill,h_180,w_180/v1483957279/xxeg78nv1s6rcxgswegw.jpg",
+  )
+20.times do
+  User.create!(
+    first_name: Faker::Ancient.hero,
+    last_name: Faker::Beer.hop,
+    email: Faker::Internet.email,
+    password: "123456",
+    facebook_picture_url: ["https://randomuser.me/api/portraits/men/1.jpg", "https://randomuser.me/api/portraits/women/90.jpg"].sample,
+    )
+end
+
+10.times do
+  Restaurant.create!(
+    name: Faker::Food.ingredient,
+    address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+    phone_number: Faker::PhoneNumber.phone_number,
+    website: Faker::Internet.domain_name,
+    category: ["brasserie", "chinois", "gastronomie", "vegetarien", "fast-food"].sample,
     picture: "http://www.papillesetpupilles.fr/wp-content/uploads/2012/10/Le-Pressoir-dArgent.jpg",
-    },
+    )
+end
 
-  {
-    name: "Restaurant Côté Rue",
-    address: "14, rue Paul Louis Lande",
-    phone_number: "05.56.33.33.33",
-    website: "https://www.tripadvisor.com",
-    category: "gastronomie",
-    picture: "https://u.tfstatic.com/restaurant_photos/210/68210/169/612/cote-rue-salle-b8c25.jpg",
-    },
 
-  {
-    name: "Dragon Doré",
-    address: "9, rue Paul Louis Lande",
-    phone_number: "05.56.33.33.33",
-    website: "https://www.tripadvisor.com",
-    category: "chinois",
-    picture: "http://www.leafstyle.fr/wp-content/uploads/2015/07/dragon-dore-restaurant-chinois-bordeaux4.jpg",
-    },
-
-  {
-    name: "Restaurant Mélodie",
-    address: "6, rue des Faussets",
-    phone_number: "05.56.33.33.33",
-    website: "https://www.tripadvisor.com",
-    category: "vegetarien",
-    picture: "https://u.tfstatic.com/restaurant_photos/405/45405/169/612/melodie-melodie-16337.jpg",
-  }
-]
-
-restaurants.each { |restaurant| Restaurant.create!(restaurant) }
-
-users = [
-
-{
- first_name: "Jean-Marc",
- last_name: "Le Pen",
- email: "JM@gmail.com",
- password: "123456",
- facebook_picture_url: "https://randomuser.me/api/portraits/men/1.jpg",
- },
-
-{
- first_name: "Marine",
- last_name: "Le Pen",
- email: "marine@gmail.com",
- password: "123456",
- facebook_picture_url: "https://randomuser.me/api/portraits/women/90.jpg",
- },
-
-{
- first_name: "Jules",
- last_name: "Le Pan",
- email: "Jules@gmail.com",
- password: "123456",
- facebook_picture_url: "https://randomuser.me/api/portraits/men/1.jpg",
- },
-
-{
- first_name: "Lucie",
- last_name: "Le Don",
- email: "lucie@gmail.com",
- password: "123456",
- facebook_picture_url: "https://randomuser.me/api/portraits/women/90.jpg",
- }
-]
-
-users.each {|user| User.create!(user)}
 
 events = [
   {
@@ -94,6 +52,13 @@ events = [
     user: User.first,
     happen_at: DateTime.now + (8/24.0),
     due_at: DateTime.now + (5/24.0)
+  },
+
+   {
+    restaurant: Restaurant.all.sample,
+    user: User.second,
+    happen_at: DateTime.now + (5/24.0),
+    due_at: DateTime.now + (2/24.0)
   },
 
    {
