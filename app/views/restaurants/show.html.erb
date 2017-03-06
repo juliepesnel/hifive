@@ -1,0 +1,8 @@
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+       var coord = <%= raw @restaurant_coordinates.to_json %>;
+        alert('Restaurant coordinates are ' + coord.lat + ', ' + coord.lng);
+    });
+  <% end %>
+<% end %>
