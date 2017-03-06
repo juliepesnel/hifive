@@ -34,9 +34,28 @@
 TITLE EVENT
         </div>
         <div class="col-xs-12 col-md-6">
-<img width="300" src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @event.restaurant.address %>&zoom=13&scale=false&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<%= @event.restaurant.address %>">
-
-
+          <div id="clockdiv">
+            <div>
+              <span class="days"></span>
+              <div class="smalltext">Days</div>
+            </div>
+            <div>
+              <span class="hours"></span>
+            <div class="smalltext">Hours</div>
+            </div>
+            <div>
+              <span class="minutes"></span>
+              <div class="smalltext">Minutes</div>
+            </div>
+            <div>
+              <span class="seconds"></span>
+              <div class="smalltext">Seconds</div>
+            </div>
+          <h1 style='color: black'>To tell your friends you're coming!</h1>
+          </div>
+          <br>
+          <br>
+          <img width="300" src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @event.restaurant.address %>&zoom=13&scale=false&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<%= @event.restaurant.address %>">
         </div>
       </div>
     </div>
@@ -96,3 +115,13 @@ TITLE EVENT
     </div>
   </div>
 </div>
+
+
+<%= content_for :after_js do %>
+  <script>
+    var deadline = "<%= @event.due_at.strftime('%B %d %Y %H:%M:%S') %>";
+
+
+    initializeClock('clockdiv', deadline);
+  </script>
+<% end %>
