@@ -2,7 +2,11 @@
   <div class="container_show">
     <div class="row" >
       <div class="col-xs-12 col-md-12">
+      <% if current_user == @event.user %>
+        <h1><%= "Hey" + " " + @creator + "," + " " + "here is your event!" %> </h1>
+        <% else %>
         <h1><%= @creator + "'s event" %></h1>
+        <% end %>
       </div>
     </div>
     <div class="img_restaurant_show">
@@ -15,6 +19,11 @@
             <%= @choosen_place.name %>
           </p>
         </div>
+          <h4 class="event_cancelled_show"><% if @event.canceled_at %>
+            <%= "EVENT CANCELLED" %>
+          <% else %>
+            <% "" %>
+          <% end %></h4>
         <div class="date">
           <div class="day">
             <%= @happening.strftime("%d") %>
@@ -26,13 +35,17 @@
       </div>
     </div>
 
+    <% if current_user == @event.user %>
+      <%= "Your guests :" %>
+      <% end %>
     <div class="row">
-      <div class="text-center guests">
+      <div class=" text-center guests">
         <div class="col-xs-12 col-md-6">
           <% @guests.each do |guest| %>
             <div class="col-xs-4">
               <div class="badge-container-show">
                 <p><%= image_tag guest.user.facebook_picture_url, class: "avatar" %></p>
+
                 <% if guest.status == "confirmed" %>
                   <div class="badge badge-green"></div>
                 <% elsif guest.status == "declined" %>
