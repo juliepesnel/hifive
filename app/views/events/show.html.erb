@@ -41,7 +41,7 @@ TITLE EVENT
             </div>
             <div>
               <span class="hours"></span>
-             <div class="smalltext">Hours</div>
+            <div class="smalltext">Hours</div>
             </div>
             <div>
               <span class="minutes"></span>
@@ -55,6 +55,7 @@ TITLE EVENT
           </div>
           <br>
           <br>
+          <img width="300" src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @event.restaurant.address %>&zoom=13&scale=false&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<%= @event.restaurant.address %>">
         </div>
       </div>
     </div>
