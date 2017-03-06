@@ -9,35 +9,165 @@ User.destroy_all
 
 
 
-User.create!(
-  first_name: "Marine",
-  last_name: "Petit",
-  email: "m@gmail.com ",
-  password: "123456",
-  facebook_picture_url: "http://res.cloudinary.com/wagon/image/upload/c_fill,h_180,w_180/v1483957279/xxeg78nv1s6rcxgswegw.jpg",
-  )
-20.times do
-  User.create!(
-    first_name: Faker::Ancient.hero,
-    last_name: Faker::Beer.hop,
-    email: Faker::Internet.email,
+users = [
+  {
+    first_name: "Marine",
+    last_name: "Petit",
+    email: "petitm31@gmail.com",
     password: "123456",
-    facebook_picture_url: ["https://randomuser.me/api/portraits/men/1.jpg", "https://randomuser.me/api/portraits/women/90.jpg"].sample,
-    )
-end
+    facebook_picture_url: "http://res.cloudinary.com/wagon/image/upload/c_fill,h_180,w_180/v1483957279/xxeg78nv1s6rcxgswegw.jpg"
+  },
+  {
+    first_name: "Thibault",
+    last_name: "Lanery",
+    email: "thibaultlanery@gmail.com",
+    password: "123456",
+    facebook_picture_url: "http://res.cloudinary.com/wagon/image/upload/c_fill,h_180,w_180/v1483962762/jlow4xjwdz8ey8zib5ac.jpg"
+  },
+  {
+    first_name: "Anteo",
+    last_name: "Guillot",
+    email: "anteo.guillot@gmail.com",
+    password: "123456",
+    facebook_picture_url:"http://res.cloudinary.com/wagon/image/upload/c_fill,h_180,w_180/v1483959451/c9ma114ebljuisnu4mhu.jpg"
+  },
+  {
+    first_name: "Julie",
+    last_name: "Pesnel",
+    email: "juliepesnel@gmail.com",
+    password: "123456",
+    facebook_picture_url:"http://res.cloudinary.com/wagon/image/upload/c_fill,h_180,w_180/v1483960437/cxkxfatqisrjglgpkmbv.jpg"
+  },
+  {
+    first_name: "Antoine",
+    last_name: "Veaux",
+    email: "antoine.veaux@gmail.com ",
+    password: "123456",
+    facebook_picture_url:"http://res.cloudinary.com/wagon/image/upload/c_fill,h_180,w_180/v1483956932/n2nsaw9s8ci1q51xwysc.jpg"
+  },
+  {
+    first_name: "Benjamin",
+    last_name: "Gahéry",
+    email: "benjamingahery@gmail.com",
+    password: "123456",
+    facebook_picture_url:"http://res.cloudinary.com/wagon/image/upload/c_fill,h_180,w_180/v1483956794/usmevqf0ci6zmym0wkgd.jpg"
+  },
+  {
+    first_name: "Charles",
+    last_name: "Randria",
+    email: "oh.randria@gmail.com",
+    password: "123456",
+    facebook_picture_url:"http://res.cloudinary.com/wagon/image/upload/c_fill,h_180,w_180/v1483963541/lduk7495w2uhangqfzey.jpg"
+  },
+  {
+    first_name: "Irène",
+    last_name: "Costelian",
+    email: " irene.costelian@gmail.com",
+    password: "123456",
+    facebook_picture_url:"http://res.cloudinary.com/wagon/image/upload/c_fill,h_180,w_180/v1484045376/vp1ucjp65f9clpojxbhn.jpg"
+  },
+  {
+    first_name: "Julia",
+    last_name: "Lissague",
+    email: "julia.lissague@gmail.com",
+    password: "123456",
+    facebook_picture_url:"http://res.cloudinary.com/wagon/image/upload/c_fill,h_180,w_180/v1483954828/lim7eeekefhol5qpkr2y.jpg"
+  },
+  {
+    first_name: "Sibylle",
+    last_name: "De Courcel",
+    email: " sibylle44@gmail.com",
+    password: "123456",
+    facebook_picture_url:"http://res.cloudinary.com/wagon/image/upload/c_fill,h_180,w_180/v1483963898/ve2wa7k9mnrtgbyq9sai.jpg"
+  }
+]
 
-10.times do
-  Restaurant.create!(
-    name: Faker::Food.ingredient,
-    address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
-    phone_number: Faker::PhoneNumber.phone_number,
-    website: Faker::Internet.domain_name,
-    category: ["brasserie", "chinois", "gastronomie", "vegetarien", "fast-food"].sample,
-    picture: "http://www.papillesetpupilles.fr/wp-content/uploads/2012/10/Le-Pressoir-dArgent.jpg",
-    )
-end
+users.each {|user| User.create!(user)}
 
+restaurants = [
+  {
+    name: "Le coin des Copains",
+    address: "1 Quai de Bacalan, 33300 Bordeaux",
+    phone_number: "05 56 04 55 27",
+    website: "https://www.facebook.com/lecoindescopainsbx/",
+    category: "Bistronomie",
+    picture: "https://u.tfstatic.com/restaurant_photos/124/68124/169/612/le-coin-des-copains-apercu-de-l-interieur-b5747.jpg",
+  },
+  {
+    name: "Chez Dupont",
+    address: "45 Rue Notre Dame, 33000 Bordeaux",
+    phone_number: "05 56 81 49 59",
+    website: "http://www.chez-dupont.com/",
+    category: "Bistronomie",
+    picture: "http://www.chez-dupont.com/image/diaporama/bistrot/img2.jpg",
+  },
+  {
+    name: "L'Estacade",
+    address: "Quai des Queyries, 33100 Bordeaux",
+    phone_number: "05 57 54 02 50",
+    website: "http://www.estacade-restaurant.com/",
+    category: "Cuisine du monde",
+    picture: "http://www.estacade-restaurant.com/content/galleries/restaurant/restaurant-01.jpg",
+  },
+  {
+    name: "Le chapon Fin",
+    address: "Quai des Queyries, 33100 Bordeaux",
+    phone_number: "05 57 54 02 50",
+    website: "http://www.chapon-fin.com/",
+    category: "Gastronomie",
+    picture: "http://medias.otbor.vm.aiprod.com/original/RESAQU033FS000J2/4-IMGP4684.jpg",
+  },
+  {
+    name: "Kuzina",
+    address: "22 Rue Porte de la Monnaie, 33800 Bordeaux",
+    phone_number: "05 56 74 32 92",
+    website: "http://www.latupina.com/en/pages/kuzina.php",
+    category: "Poissons",
+    picture: "http://www.latupina.com/wp-content/uploads/2012/07/L1040562.jpg",
+  },
+  {
+    name: "La Maison du Pata Negra",
+    address: "Place des Capucins, 33800 Bordeaux",
+    phone_number: "05 56 88 59 92",
+    website: "http://maisondupatanegra.com",
+    category: "Espagnol",
+    picture: "https://benedictelarre.files.wordpress.com/2014/01/wpid-img_2284.jpg",
+  },
+  {
+    name: "Ristorant Del Arte",
+    address: "Cinéma Mégarama, 7 Quai Queyries, 33100 Bordeaux",
+    phone_number: "05 56 40 86 21",
+    website: "http://www.delarte.fr/restaurant-italien-pizzeria-bordeaux-bastide.html",
+    category: "Italien",
+    picture: "http://mikespizza.fr/wp-content/uploads/2016/07/wafswectpmbr0zmug9ly.jpg",
+  },
+  {
+    name: "Le Davoli",
+    address: "13 Rue des Bahutiers, 33000 Bordeaux",
+    phone_number: "05 56 40 86 21",
+    website: "http://www.ledavoli.com/",
+    category: "Cuisine de marché",
+    picture: "https://www.naniecuisine.com/wp-content/uploads/2016/05/Le-Davoli-%C3%A0-Bordeaux-33-00.jpg",
+  },
+  {
+    name: "Le Taj Mahal Bordeaux",
+    address: "24 Rue Parlement Sainte-Catherine, 33000 Bordeaux",
+    phone_number: "05 56 40 86 21",
+    website: "http://www.tajmahalbordeaux.com/",
+    category: "Indien",
+    picture: "https://static.restovisio.com/gallery/large/restaurant-bordeaux-taj-mahal-655_6.jpg",
+  },
+  {
+    name: "Miles",
+    address: "33 Rue du Cancera, 33000 Bordeaux",
+    phone_number: "05 56 81 18 24",
+    website: "http://restaurantmiles.com/",
+    category: "French",
+    picture: "https://static.restovisio.com/gallery/large/551becff40f6a-a826abcaf2197b4176c1f7560271ece8.png",
+  }
+]
 
+restaurants.each {|resto| Restaurant.create!(resto)}
 
 events = [
   {
@@ -46,21 +176,24 @@ events = [
     happen_at: DateTime.now + (5/24.0),
     due_at: DateTime.now + (2/24.0)
   },
-
     {
     restaurant: Restaurant.all.sample,
     user: User.first,
     happen_at: DateTime.now + (8/24.0),
     due_at: DateTime.now + (5/24.0)
   },
-
    {
     restaurant: Restaurant.all.sample,
-    user: User.first,
+    user: User.third,
     happen_at: DateTime.now + (5/24.0),
     due_at: DateTime.now + (2/24.0)
   },
-
+   {
+    restaurant: Restaurant.all.sample,
+    user: User.fourth,
+    happen_at: DateTime.now + (5/24.0),
+    due_at: DateTime.now + (4/24.0)
+  },
    {
     restaurant: Restaurant.all.sample,
     user: User.second,
@@ -73,53 +206,103 @@ events.each {|event| Event.create!(event)}
 
 participations = [
 {
-  user: User.second,
+  user: User.fifth,
   event: Event.first,
   status: 0
-},
-
-{
-  user: User.third,
-  event: Event.first,
-  status: 1
 },
 
 {
   user: User.fourth,
   event: Event.first,
-  status: 2
+  status: 1
 },
 
 {
   user: User.second,
+  event: Event.first,
+  status: 2
+},
+
+{
+  user: User.third,
   event: Event.second,
   status: 0
 },
 
 {
-  user: User.first,
-  event: Event.fourth,
+  user: User.fourth,
+  event: Event.second,
   status: 1
+},
+
+{
+  user: User.fifth,
+  event: Event.second,
+  status: 1
+},
+
+{
+  user: User.first,
+  event: Event.second,
+  status: 0
+},
+
+{
+  user: User.all.sample,
+  event: Event.third,
+  status: 2
 },
 
 {
   user: User.second,
   event: Event.third,
-  status: 1
+  status: 2
 },
 
 {
   user: User.third,
-  event: Event.third,
-  status: 0
+  event: Event.fourth,
+  status: 2
+},
+
+{
+  user: User.fifth,
+  event: Event.fourth,
+  status: 2
 },
 
 {
   user: User.first,
-  event: Event.third,
+  event: Event.fourth,
   status: 2
-}
+},
 
+{
+  user: User.second,
+  event: Event.fourth,
+  status: 2
+},
+
+{
+  user: User.first,
+  event: Event.fifth,
+  status: 2
+},
+
+{
+  user: User.third,
+  event: Event.fifth,
+  status: 2
+},
+
+{
+  user: User.fourth,
+  event: Event.fifth,
+  status: 2
+},
 ]
 
 participations.each {|participation| Participation.create!(participation)}
+
+
+
