@@ -19,40 +19,34 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="selectable_restaurants">
-          <% Restaurant.all.each do |restaurant| %>
-            <label>
-              <%= f.radio_button "restaurant_id", restaurant.id %>
-              <%= image_tag restaurant.picture %>
-              <div class="category-restaurant text-center">
-                <%= restaurant.category %>
-              </div>
-              <div class="text_seclectable_restaurant text-center">
-                <%= restaurant.name %>
-                <p>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                </p>
-
-              </div>
-            </label>
-        <% end %>
-     </div>
-     </div>
+    <div class="selectable_restaurants" id="myscroll">
+      <div class='myflextest'>
+      <% Restaurant.all.each do |restaurant| %>
+        <label>
+          <%= f.radio_button "restaurant_id", restaurant.id %>
+          <%= image_tag restaurant.picture %>
+          <div class="category-restaurant text-center">
+            <%= restaurant.category %>
+          </div>
+          <div class="text_seclectable_restaurant text-center">
+            <%= restaurant.name %>
+            <p>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star-o" aria-hidden="true"></i>
+            </p>
+          </div>
+        </label>
+      <% end %>
+      </div>
     </div>
     <div class="row">
       <div class="col-xs-12 text-center">
-    <%= f.input :happen_at %>
-    <br>
-    <%= f.input :due_at %>
-    <br>
-    <%= f.button :submit, class: "btn btn-primary" %>
-    <br>
-    </div>
+        <%= f.input :happen_at %>
+        <%= f.input :due_at %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      </div>
     </div>
   <% end %>
 </div>

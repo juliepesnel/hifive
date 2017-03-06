@@ -1,4 +1,16 @@
+#myscroll {
+  position: relative;
+  height: 250px;
+}
+
+.myflextest {
+  white-space: nowrap;
+}
+
 .selectable_restaurants {
+  // position: relative;
+  // height: 100%;
+
   img {
     width: 150px;
     height: 150px;
@@ -7,11 +19,10 @@
     margin: 4px;
     border: 3px solid transparent;
     position: relative;
-    overflow: auto;
   }
 
   input:checked + img {
-    border: 3px solid red;
+    border: 2px solid #67d778;
   }
 
   input {
