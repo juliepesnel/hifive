@@ -1,22 +1,16 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <%= simple_form_for(@event) do |f| %>
-        <div class="selectable_users">
-          <div class="card-selectable-users">
-            <%= f.fields_for :participations do |uf| %>
-              <% User.all.each do |user| %>
-              <div class="col-xs-3">
-                <label>
-                  <%= uf.check_box "user_ids", { multiple: true }, user.id, nil %>
-                  <%= avatar_image_tag user %>
-                  <%= user.first_name %>
-                </label>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
+  <%= simple_form_for(@event) do |f| %>
+    <div class="selectable_users" id="myscroll-user">
+      <div class='myflextest'>
+        <%= f.fields_for :participations do |uf| %>
+          <% User.all.each do |user| %>
+            <label>
+              <%= uf.check_box "user_ids", { multiple: true }, user.id, nil %>
+              <%= avatar_image_tag user %>
+              <%= user.first_name %>
+            </label>
+          <% end %>
+        <% end %>
       </div>
     </div>
     <div class="selectable_restaurants" id="myscroll">

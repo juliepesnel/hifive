@@ -1,11 +1,18 @@
+#myscroll-user {
+  position: relative;
+}
+
 .selectable_users {
+  font-size: 12px;
+  padding-top: 10px;
+
   img {
     border-radius: 50%;
-    width: 50%;
-    height: 50%;
+    width: 50px;
+    height: 50px;
     object-fit: cover;
     transition: box-shadow ease 200ms;
-    margin: 4px;
+    margin: 5px;
     border: 3px solid transparent;
   }
   input:checked + img {
@@ -14,9 +21,4 @@
   input {
     display: none;
   }
-}
-
-.card-selectable-users {
-  font-size: 12px;
-  padding-top: 10px;
 }
