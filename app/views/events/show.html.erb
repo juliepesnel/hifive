@@ -108,8 +108,7 @@
             <%= link_to 'Re-launch event', event_path(@event, event: {canceled_at: :nil}), method: :patch, class: "btn-confirm" %>
           <% else %>
             <%= link_to 'Cancel event', edit_event_path(@event), class: "btn-declined" %>
-            <h4 style='color: black'>To tell your friends you're coming!</h4>
-            <%= link_to 'Launch invites!', edit_event_path(@event), class: "btn-create" %>
+            <%= link_to 'send invitations!', edit_event_path(@event), class: "btn-create" %>
           <% end %>
         <% end %>
       </div>
