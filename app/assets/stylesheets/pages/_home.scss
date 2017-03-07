@@ -5,7 +5,29 @@
   text-align:center;
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url("https://c.stocksy.com/a/H11200/z0/480579.jpg");
   background-size: cover;
-  height: 592px;
+  min-height: 100%;
+  position: relative;
+
+  .button-create-pad {
+    color: white;
+    background-color: #00e8bb;
+    border: 1px solid #00e8bb;
+    padding: 20px 25px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 1;
+    margin-bottom: 10%;
+    margin-top: 10%
+}
+
+.button-create-pad:hover {
+  opacity: 0,8;
+  text-decoration: none;
+  color: white;
+  background-color: #FFFF00;
+  border: 1px solid #FFFF00;
+}
 
 }
 
@@ -17,7 +39,6 @@
 
 #wrapper-home h1 {
   margin-top: 22%;
-  margin-bottom: 40px;
   color: #fff;
   font-size: 45px;
   font-weight: 900;
@@ -27,30 +48,6 @@
 h2.subtitle {
   color: #fff;
   font-size: 24px;
-}
-
-/* social */
-.button-create {
-  padding: 60px;
-  position: bottom;
-}
-
-.button-create-pad {
-  color: white;
-  background-color: #00e8bb;
-  border: 1px solid #00e8bb;
-  padding: 20px 25px;
-  border-radius: 50px;
-  font-size: 20px;
-  font-weight: bold;
-  opacity: 1;
-  margin-top: 35%;
-}
-
-.button-create-pad:hover {
-  opacity: 0,8;
-  text-decoration: none;
-  color: white;
 }
 
 /* countdown */
