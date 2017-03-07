@@ -1,27 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Create and organize your outings very simply!">
-    <meta name="author" content="http://bootstraptaste.com">
-
-    <title>Hive</title>
-
-    <!-- Bootstrap -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/bootstrap-theme.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.css" rel="stylesheet">
-
-    <!-- siimple style -->
-    <link href="assets/css/style.css" rel="stylesheet">
-  </head>
-
-  <body>
-  <div id="center">
-
+<div id="center">
   <div id="wrapper-home">
+
   <h1>Create and organize your outings very simply!</h1>
 
   <!-- Button trigger modal -->
@@ -30,7 +9,52 @@
 </button>
 
 
+
   </div>
+  <%= link_to t(".top_call_to_action", default: "Create an event"), new_event_path, class: "button-create-pad" %>
+</div>
+<div class="wrapper-home">
+  <div class="container-home text-center">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-md-4">
+        <i class="fa fa-hand-peace-o fa-4x" aria-hidden="true"></i>
+        <h2>
+          HiFive organize your outings with your friend !
+        </h2>
+        <p>
+          No more complications with all your apps, sms, What's app, Messenger, Facebook... !
+        </p>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4">
+        <i class="fa fa-paper-plane-o fa-4x" aria-hidden="true"></i>
+        <h2>
+          A unique send request to all your friend
+        </h2>
+        <p>
+          HiFive allows you to send a request to all your friends at the same <time class=""></time>
+          Your friends do not just have to reply by sms.
+        </p>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4">
+        <i class="fa fa-bolt fa-4x" aria-hidden="true"></i>
+        <h2>
+          Simplify your life !
+        </h2>
+        <p>
+          See participants at a glance <br>
+          Find a date with your friends twice as fast! <br>
+          Free service, start now !
+        </p>
+      </div>
+      <div class="row" id="sign_up_home">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <%= link_to t(".sign_up", default: "Sign up"),  new_user_registration_path, class: "button-signup-home" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
     <%= link_to t(".top_call_to_action", default: "Create an event"), new_event_path, class: "button-create-pad" %>
@@ -50,3 +74,4 @@
  </div>
 </body>
 </html>
+
