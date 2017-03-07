@@ -7,8 +7,10 @@
           <% User.all.each do |user| %>
             <label>
               <%= uf.check_box "user_ids", { multiple: true }, user.id, nil %>
-              <%= avatar_image_tag user %>
-              <%= user.first_name %>
+              <% if current_user != user %>
+                <%= avatar_image_tag user %>
+               <p><%= user.first_name %></p>
+              <% end %>
             </label>
           <% end %>
         <% end %>
