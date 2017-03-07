@@ -198,9 +198,10 @@ events = [
     restaurant: Restaurant.all.sample,
     title: "APERO PINARD COCHONAILLE????",
     user: User.second,
-    happen_at: DateTime.now + (720/24.0),
-    due_at: DateTime.now + (480/24.0)
-  },
+    happen_at: DateTime.now + (5/24.0),
+    due_at: DateTime.now + (4/24.0)
+  }
+
 ]
 
 events.each {|event| Event.create!(event)}
