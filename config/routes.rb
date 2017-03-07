@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'pages#home'
   resources :events
+  resources :tastes, only: [:new, :create]
   resources :participations, only: [:update]
 
   mount Attachinary::Engine => "/attachinary"
