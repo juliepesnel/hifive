@@ -80,13 +80,30 @@ users = [
 
 users.each {|user| User.create!(user)}
 
+category_list = [
+  ["Vietnamese", "http://regevelya.com/wp-content/uploads/2015/10/vietnamese-pho-ga.jpg"],
+  ["Italian", "http://regevelya.com/wp-content/uploads/2015/10/pizza-italy.jpg"],
+  ["French", "http://regevelya.com/wp-content/uploads/2013/11/french-food-snails2.jpg"],
+  ["American","https://www.waiter.com/blog/wp-content/uploads/2015/06/hamburger.jpg"],
+  ["Fast-food","https://www.waiter.com/blog/wp-content/uploads/2015/06/hamburger.jpg"],
+  ["Mexican", "http://regevelya.com/wp-content/uploads/2015/10/mexico-huaraches.jpg"],
+  ["Taiwanese","http://regevelya.com/wp-content/uploads/2013/11/taiwan-food.jpg"],
+  ["Greek", "http://regevelya.com/wp-content/uploads/2013/11/greek-salad.jpg"],
+  ["Thaï", "https://www.waiter.com/blog/wp-content/uploads/2015/06/hamburger.jpg" ],
+  ["Gastronomic", "http://regevelya.com/wp-content/uploads/2013/11/beef-tenderloin-canada.jpg"]
+]
+
+category_list.each do |category|
+  Category.create( name:category[0], pictoname:category[1] )
+end
+
 restaurants = [
   {
     name: "Le coin des Copains",
     address: "1 Quai de Bacalan, 33300 Bordeaux",
     phone_number: "05 56 04 55 27",
     website: "https://www.facebook.com/lecoindescopainsbx/",
-    category: "Bistronomie",
+    category_id: 3,
     picture: "https://u.tfstatic.com/restaurant_photos/124/68124/169/612/le-coin-des-copains-apercu-de-l-interieur-b5747.jpg",
   },
   {
@@ -94,7 +111,7 @@ restaurants = [
     address: "45 Rue Notre Dame, 33000 Bordeaux",
     phone_number: "05 56 81 49 59",
     website: "http://www.chez-dupont.com/",
-    category: "Bistronomie",
+    category_id: 3,
     picture: "http://www.chez-dupont.com/image/diaporama/bistrot/img2.jpg",
   },
   {
@@ -102,7 +119,7 @@ restaurants = [
     address: "Quai des Queyries, 33100 Bordeaux",
     phone_number: "05 57 54 02 50",
     website: "http://www.estacade-restaurant.com/",
-    category: "Cuisine du monde",
+    category_id: 10,
     picture: "http://www.estacade-restaurant.com/content/galleries/restaurant/restaurant-01.jpg",
   },
   {
@@ -110,7 +127,7 @@ restaurants = [
     address: "Quai des Queyries, 33100 Bordeaux",
     phone_number: "05 57 54 02 50",
     website: "http://www.chapon-fin.com/",
-    category: "Gastronomie",
+    category_id: 3,
     picture: "http://medias.otbor.vm.aiprod.com/original/RESAQU033FS000J2/4-IMGP4684.jpg",
   },
   {
@@ -118,7 +135,7 @@ restaurants = [
     address: "22 Rue Porte de la Monnaie, 33800 Bordeaux",
     phone_number: "05 56 74 32 92",
     website: "http://www.latupina.com/en/pages/kuzina.php",
-    category: "Poissons",
+    category_id: 8,
     picture: "http://www.latupina.com/wp-content/uploads/2012/07/L1040562.jpg",
   },
   {
@@ -126,7 +143,7 @@ restaurants = [
     address: "Place des Capucins, 33800 Bordeaux",
     phone_number: "05 56 88 59 92",
     website: "http://maisondupatanegra.com",
-    category: "Espagnol",
+    category_id: 6,
     picture: "https://benedictelarre.files.wordpress.com/2014/01/wpid-img_2284.jpg",
   },
   {
@@ -134,7 +151,7 @@ restaurants = [
     address: "Cinéma Mégarama, 7 Quai Queyries, 33100 Bordeaux",
     phone_number: "05 56 40 86 21",
     website: "http://www.delarte.fr/restaurant-italien-pizzeria-bordeaux-bastide.html",
-    category: "Italien",
+    category_id: 2,
     picture: "http://mikespizza.fr/wp-content/uploads/2016/07/wafswectpmbr0zmug9ly.jpg",
   },
   {
@@ -142,7 +159,7 @@ restaurants = [
     address: "13 Rue des Bahutiers, 33000 Bordeaux",
     phone_number: "05 56 40 86 21",
     website: "http://www.ledavoli.com/",
-    category: "Cuisine de marché",
+    category_id:  3,
     picture: "https://www.naniecuisine.com/wp-content/uploads/2016/05/Le-Davoli-%C3%A0-Bordeaux-33-00.jpg",
   },
   {
@@ -150,7 +167,7 @@ restaurants = [
     address: "24 Rue Parlement Sainte-Catherine, 33000 Bordeaux",
     phone_number: "05 56 40 86 21",
     website: "http://www.tajmahalbordeaux.com/",
-    category: "Indien",
+    category_id: 7,
     picture: "https://static.restovisio.com/gallery/large/restaurant-bordeaux-taj-mahal-655_6.jpg",
   },
   {
@@ -158,12 +175,16 @@ restaurants = [
     address: "33 Rue du Cancera, 33000 Bordeaux",
     phone_number: "05 56 81 18 24",
     website: "http://restaurantmiles.com/",
-    category: "French",
+    category_id: 4,
     picture: "https://static.restovisio.com/gallery/large/551becff40f6a-a826abcaf2197b4176c1f7560271ece8.png",
   }
 ]
 
 restaurants.each {|resto| Restaurant.create!(resto)}
+
+
+
+
 
 events = [
   {
