@@ -1,5 +1,6 @@
 <div class="container">
   <%= simple_form_for(@event) do |f| %>
+  <h3 id="h3">Choose your friends</h3>
     <div class="selectable_users" id="myscroll-user">
       <div class='myflextest'>
         <%= f.fields_for :participations do |uf| %>
@@ -13,6 +14,7 @@
         <% end %>
       </div>
     </div>
+    <h3 id="h3">Choose a restaurant</h3>
     <div class="selectable_restaurants" id="myscroll">
       <div class='myflextest'>
       <% Restaurant.all.each do |restaurant| %>
@@ -35,14 +37,24 @@
       <% end %>
       </div>
     </div>
-    <div class="row">
-      <div class="col-xs-12 text-center">
-
-        <%= f.input :happen_at %>
-        <%= f.input :due_at %>
-        <%= f.button :submit, class: "btn btn-primary" %>
+    <div class="when">
+      <div class="row">
+        <div class="col-xs-12 text-left">
+          <h3>When ?</h3>
+          <%= f.input_field :happen_at %>
+        </div>
       </div>
-
     </div>
-  <% end %>
+    <div class="answer">
+      <div class="row">
+        <div class="col-xs-12 text-left">
+          <h3>Answer before :</h3>
+          <%= f.input_field :due_at %>
+        </div>
+      </div>
+    </div>
+    <div class="button-create-event text-center">
+      <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+  </div>
 </div>

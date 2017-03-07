@@ -26,6 +26,10 @@
   }
 }
 
+#h3 {
+    border-bottom: 3px solid #FFFF00;
+  }
+
 .category-restaurant {
   position: relative;
   top: -151px;
@@ -45,3 +49,25 @@
   left: 1px;
   font-size: 11px;
 }
+
+.when {
+  padding-top: 10px;
+  padding-bottom: 20px;
+
+  h3 {
+    border-bottom: 3px solid #FFFF00;
+  }
+}
+
+.answer {
+
+  padding-top: 20px;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+
+  h3 {
+    border-bottom: 3px solid #FFFF00;
+  }
+}
+
+
