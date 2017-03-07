@@ -1,32 +1,59 @@
 <div class="navbar-wagon" id="header">
-  <!-- Logo -->
   <%= link_to "Hi Five", root_path, class: "logo"%>
-
-  <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <!-- Search form -->
     <a href="" class="navbar-wagon-item navbar-wagon-link hidden-xs hidden-sm">About</a>
-
-      <!-- Notification -->
     <a href="" class="navbar-wagon-item navbar-wagon-link hidden-xs hidden-sm">Contact</a>
-
-    <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
-
-      <!-- Profile picture and dropdown -->
-    <div class="navbar-wagon-item hidden-xs hidden-sm">
-      <div class="dropdown">
-        <%= avatar_image_tag(current_user, class: "avatar-home dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li>
-            <%= link_to  edit_user_registration_path do %>
+      <div class="navbar-wagon-item hidden-xs hidden-sm">
+        <div class="dropdown">
+          <%= avatar_image_tag(current_user, class: "avatar-home dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+              <%= link_to events_path do %>
+              <i class="fa fa-calendar-check-o" aria-hidden="true"></i> <%= t(".events", default: "My events") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_event_path do %>
+                <i class="fa fa-plus-circle" aria-hidden="true">  </i> <%= t(".events", default: "Create an event") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to  edit_user_registration_path do %>
               <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-            <% end %>
-          </li>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <% else %>
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <% end %>
+  </div>
+  <% if user_signed_in? %>
+    <div class="navbar-wagon-item hidden-md hidden-lg">
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
             <%= link_to events_path do %>
               <i class="fa fa-calendar-check-o" aria-hidden="true"></i> <%= t(".events", default: "My events") %>
+            <% end %>
+          </li>
+          <li>
+          <li>
+            <%= link_to new_event_path do %>
+              <i class="fa fa-plus-circle" aria-hidden="true"></i> <%= t(".events", default: "Create an event") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to  edit_user_registration_path do %>
+            <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
             <% end %>
           </li>
           <li>
@@ -37,41 +64,8 @@
         </ul>
       </div>
     </div>
-
     <% else %>
-
-      <!-- Login text link -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
     <% end %>
-    </div>
-
-    <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Create an event"), new_event_path, class: "btn-medium-navbar" %>
-
-
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li>
-          <%= link_to  edit_user_registration_path do %>
-            <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to events_path do %>
-            <i class="fa fa-calendar-check-o" aria-hidden="true"></i> <%= t(".events", default: "My events") %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-          <% end %>
-        </li>
-      </ul>
-    </div>
-  </div>
 </div>
 
