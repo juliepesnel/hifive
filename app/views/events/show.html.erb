@@ -9,7 +9,7 @@
         <% end %>
       </div>
     </div>
-    <div class="img_restaurant_show">
+    <div class="show_upper_side">
       <div class="row" >
         <div class="col-xs-12 col-md-6">
           <p class="img_show">
@@ -31,31 +31,30 @@
           </div>
         </div>
           <div class="col-xs-12 col-md-6">
-TITLE EVENT
+          <%= @event.title %>
         </div>
         <div class="col-xs-12 col-md-6">
+            <img class="google_map" src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @event.restaurant.address %>&zoom=13&scale=false&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<%= @event.restaurant.address %>">
+        </div>
+        <div class="col-xs-12 col-md-6 text-center">
           <div id="clockdiv">
             <div>
               <span class="days"></span>
-              <div class="smalltext">Days</div>
+                <div class="smalltext">Days</div>
             </div>
             <div>
               <span class="hours"></span>
-            <div class="smalltext">Hours</div>
+                <div class="smalltext">Hours</div>
             </div>
             <div>
               <span class="minutes"></span>
-              <div class="smalltext">Minutes</div>
+                <div class="smalltext">Minutes</div>
             </div>
             <div>
               <span class="seconds"></span>
-              <div class="smalltext">Seconds</div>
+                <div class="smalltext">Seconds</div>
             </div>
-          <h1 style='color: black'>To tell your friends you're coming!</h1>
           </div>
-          <br>
-          <br>
-          <img width="300" src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @event.restaurant.address %>&zoom=13&scale=false&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<%= @event.restaurant.address %>">
         </div>
       </div>
     </div>
@@ -72,9 +71,9 @@ TITLE EVENT
             <div class="col-xs-2">
               <div class="badge-container-show">
                 <p><%= image_tag guest.user.facebook_picture_url, class: "avatar" %></p>
-                <% if guest.status == "confirme" %>
+                <% if guest.status == "confirmed" %>
                   <div class="badge badge-green"> </div>
-                <% elsif guest.status == "decline" %>
+                <% elsif guest.status == "declined" %>
                   <div class="badge badge-red"> </div>
                 <% else %>
                   <div class="badge badge-bordered">?</div>
@@ -109,6 +108,8 @@ TITLE EVENT
             <%= link_to 'Re-launch event', event_path(@event, event: {canceled_at: :nil}), method: :patch, class: "btn-confirm" %>
           <% else %>
             <%= link_to 'Cancel event', edit_event_path(@event), class: "btn-declined" %>
+            <h4 style='color: black'>To tell your friends you're coming!</h4>
+            <%= link_to 'Launch invites!', edit_event_path(@event), class: "btn-create" %>
           <% end %>
         <% end %>
       </div>
