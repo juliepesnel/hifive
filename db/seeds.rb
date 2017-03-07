@@ -173,29 +173,34 @@ events = [
   {
     restaurant: Restaurant.all.sample,
     user: User.first,
+    title: "Apéro Ruby"
     happen_at: DateTime.now + (5/24.0),
     due_at: DateTime.now + (2/24.0)
   },
     {
     restaurant: Restaurant.all.sample,
+    title: "Holliday preps"
     user: User.first,
     happen_at: DateTime.now + (8/24.0),
     due_at: DateTime.now + (5/24.0)
   },
    {
     restaurant: Restaurant.all.sample,
+    title: "DRINK! it's been too long.."
     user: User.third,
     happen_at: DateTime.now + (5/24.0),
     due_at: DateTime.now + (2/24.0)
   },
    {
     restaurant: Restaurant.all.sample,
+    title: "besoin de sortir les gars avec bébé ca va plus"
     user: User.fourth,
     happen_at: DateTime.now + (5/24.0),
     due_at: DateTime.now + (4/24.0)
   },
    {
     restaurant: Restaurant.all.sample,
+    title: "APERO PINARD COCHONAILLE????"
     user: User.second,
     happen_at: DateTime.now + (5/24.0),
     due_at: DateTime.now + (4/24.0)
