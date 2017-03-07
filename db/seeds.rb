@@ -23,7 +23,7 @@ users = [
   {
     first_name: "Anteo",
     last_name: "Guillot",
-    email: "anteo.guillot@gmail.com",
+    email: "anteo737@hotmail.fr",
     password: "123456",
     facebook_picture_url:"http://res.cloudinary.com/wagon/image/upload/c_fill,h_180,w_180/v1483959451/c9ma114ebljuisnu4mhu.jpg"
   },
@@ -170,29 +170,29 @@ events = [
     restaurant: Restaurant.all.sample,
     title: "Apéro Ruby",
     user: User.first,
-    happen_at: DateTime.now + (5/24.0),
-    due_at: DateTime.now + (2/24.0)
+    happen_at: DateTime.now + (18/24.0),
+    due_at: DateTime.now + (14/24.0)
   },
     {
     restaurant: Restaurant.all.sample,
     title: "Holliday preps",
     user: User.first,
-    happen_at: DateTime.now + (8/24.0),
-    due_at: DateTime.now + (5/24.0)
+    happen_at: DateTime.now + (24/24.0),
+    due_at: DateTime.now + (18/24.0)
   },
    {
     restaurant: Restaurant.all.sample,
     title: "DRINK! it's been too long..",
     user: User.third,
-    happen_at: DateTime.now + (5/24.0),
-    due_at: DateTime.now + (2/24.0)
+    happen_at: DateTime.now + (48/24.0),
+    due_at: DateTime.now + (32/24.0)
   },
    {
     restaurant: Restaurant.all.sample,
     title: "Besoin de sortir les gars avec bébé ca va plus",
     user: User.fourth,
-    happen_at: DateTime.now + (5/24.0),
-    due_at: DateTime.now + (4/24.0)
+    happen_at: DateTime.now + (168/24.0),
+    due_at: DateTime.now + (72/24.0)
   },
    {
     restaurant: Restaurant.all.sample,
@@ -200,7 +200,8 @@ events = [
     user: User.second,
     happen_at: DateTime.now + (5/24.0),
     due_at: DateTime.now + (4/24.0)
-  },
+  }
+
 ]
 
 events.each {|event| Event.create!(event)}
