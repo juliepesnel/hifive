@@ -53,15 +53,6 @@ h2.subtitle {
   color: white;
 }
 
-/* countdown */
-#countdown {
-  font-size: 48px;
-  color: #fff;
-  line-height: 1.1em;
-  margin: 40px 0 60px;
-}
-
-
 /* footer */
 p.copyright {
   margin-top: 30px;
@@ -75,33 +66,7 @@ p.copyright {
     color: #fff;
 }
 
-#clockdiv{
-    font-family: sans-serif;
-    color: #fff;
-    display: inline-block;
-    font-weight: 100;
-    text-align: center;
-    font-size: 30px;
-}
 
-#clockdiv > div{
-    padding: 10px;
-    border-radius: 3px;
-    background: #00BF96;
-    display: inline-block;
-}
-
-#clockdiv div > span{
-    padding: 15px;
-    border-radius: 3px;
-    background: #00816A;
-    display: inline-block;
-}
-
-.smalltext{
-    padding-top: 5px;
-    font-size: 16px;
-}
 
 .homepage-bck{
  color: white;
