@@ -16,7 +16,7 @@ class TastesController < ApplicationController
 private
 
   def taste_params
-   params.require(:taste).permit(:level, :category)
+   params.require(:taste).permit(:level, :category_id)
   end
 
 end
