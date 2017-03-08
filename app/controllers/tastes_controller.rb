@@ -2,6 +2,7 @@ class TastesController < ApplicationController
 
   def new
     @taste = Taste.new
+    @category = Category.all.sample
     render layout: false
   end
 
@@ -15,7 +16,7 @@ class TastesController < ApplicationController
 private
 
   def taste_params
-   params.require(:taste).permit(:level, :category)
+   params.require(:taste).permit(:level, :category_id)
   end
 
 end

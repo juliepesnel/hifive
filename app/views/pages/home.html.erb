@@ -1,10 +1,14 @@
 <div id="center">
   <div id="wrapper-home">
-    <h1>Create and organize your outings very simply!</h1>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-      Launch demo modal
-    </button>
+
+
+  <h1>Create and organise your outings very simply!</h1>
+
+
+
+
+
+
   </div>
   <%= link_to t(".top_call_to_action", default: "Create an event"), new_event_path, class: "button-create-pad" %>
 </div>
@@ -14,32 +18,29 @@
       <div class="col-xs-12 col-sm-4 col-md-4">
         <i class="fa fa-hand-peace-o fa-4x" aria-hidden="true"></i>
         <h2>
-          HiFive organize your outings with your friend !
+          1-Click
         </h2>
-        <p>
-          No more complications with all your apps, sms, What's app, Messenger, Facebook... !
-        </p>
+        <h5>
+          "HiFive organises your outings with your friends in 5 clicks"
+        </h5>
       </div>
       <div class="col-xs-12 col-sm-4 col-md-4">
         <i class="fa fa-paper-plane-o fa-4x" aria-hidden="true"></i>
         <h2>
-          A unique send request to all your friend
+          2-Send
         </h2>
-        <p>
-          HiFive allows you to send a request to all your friends at the same <time class=""></time>
-          Your friends do not just have to reply by sms.
-        </p>
+        <h5>
+          "Send a request to all your friends at once"
+        </h5>
       </div>
       <div class="col-xs-12 col-sm-4 col-md-4">
         <i class="fa fa-bolt fa-4x" aria-hidden="true"></i>
         <h2>
-          Simplify your life !
+          3-Enjoy!
         </h2>
-        <p>
-          See participants at a glance <br>
-          Find a date with your friends twice as fast! <br>
-          Free service, start now !
-        </p>
+        <h5>
+          "Spend less time organising and more with your friends!"
+        </h5>
       </div>
       <div class="row" id="sign_up_home">
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -49,12 +50,38 @@
     </div>
   </div>
 </div>
-<%= link_to t(".top_call_to_action", default: "Create an event"), new_event_path, class: "button-create-pad" %>
-<%= link_to "#testmodal", class: "", data: { toggle: "modal", userid: "#{current_user.id}" } do %>
-    <div class="test">Test</div>
-<% end %>
-<div class="modal" id="testmodal" tabindex="-1" role="dialog" aria-labelledby="TastesNew">
-  <div class="modal-body">
-    Loading...
+
+
+
+
+
+
+
+  <div class="modal" id="new-taste" tabindex="-1" role="dialog" aria-labelledby="TastesNew">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          Loading...
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+
+
+
+
+<% content_for :after_js do %>
+  <script>
+    $(function(){
+      var url = document.location.href;
+      var anchor = url.substring(url.indexOf("#") + 1);
+      if (anchor == "sign_up" || anchor == "sign_in") {
+        $('#new-taste').modal({ show: true, remote: "<%= new_taste_path %>" });
+      }
+    });
+  </script>
+<% end %>
+
+
+
+
