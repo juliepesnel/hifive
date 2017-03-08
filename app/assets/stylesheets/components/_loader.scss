@@ -1,0 +1,66 @@
+@import "compass/css3";
+
+.loader {
+  height: 100%;
+  width: 150px;
+  margin: auto;
+  @include border-radius(100%);
+
+  .bar {
+    background-color: #00bff3;
+    font-size: 0;
+    height: 3px;
+    opacity: 0;
+    width: 25px;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: subtleIn;
+    -webkit-animation-timing-function: ease-in-out;
+    @include inline-block;
+
+    &:nth-child(1) {
+     -webkit-animation-delay: 0s;
+    }
+
+    &:nth-child(2) {
+      background-color: #82ca9c;
+     -webkit-animation-delay: .3s;
+    }
+
+    &:nth-child(3) {
+      background-color: #f69679;
+     -webkit-animation-delay: .6s;
+    }
+
+    &:nth-child(4) {
+      background-color: #acd373;
+     -webkit-animation-delay: .9s;
+    }
+
+    &:nth-child(5) {
+      background-color: #959595;
+     -webkit-animation-delay: 1.2s;
+    }
+  }
+}
+
+@-webkit-keyframes subtleIn {
+  0% {
+    opacity: 0;
+    @include transform(translateY(300%));
+  }
+
+  30% {
+    opacity: 1;
+    @include transform(translateY(0));
+  }
+  100% {
+
+  }
+}
+
+.loader-container {
+  height: 20px;
+  width: 100%;
+}
