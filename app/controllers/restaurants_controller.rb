@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+
   def show
     @restaurant = Restaurant.find(params[:id])
     @restaurant_coordinates = { lat: @restaurant.latitude, lng: @restaurant.longitude }
