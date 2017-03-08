@@ -1,5 +1,6 @@
 <%= simple_form_for(@taste) do |f| %>
-  <%= image_tag 'chinese'%>
-  <%= f.input :level %>
+  <%= image_tag @category.pictoname %>
+  <h2><%= @category.name %></h2>
+  <%= f.input :level, as: :radio_buttons %>
   <%= f.submit %>
 <% end %>
