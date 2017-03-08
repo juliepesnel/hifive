@@ -24,7 +24,7 @@
           <%= f.radio_button "restaurant_id", restaurant.id %>
           <%= image_tag restaurant.picture %>
           <div class="category-restaurant text-center">
-            <%= restaurant.category %>
+            <%= restaurant.category.name %>
           </div>
           <div class="text_seclectable_restaurant text-center">
             <%= restaurant.name %>
