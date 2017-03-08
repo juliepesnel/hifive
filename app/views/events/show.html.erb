@@ -5,6 +5,7 @@
       <% if current_user == @event.user %>
         <h1 id = "show_title"><%= "Hey" + " " + @creator + "," + " " + "here is your event!" %> </h1>
         <% else %>
+
         <h1 id = "show_title"><%= @creator + "'s event" %></h1>
         <% end %>
       </div>
@@ -38,15 +39,14 @@
             <img class="google_map" src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @event.restaurant.address %>&zoom=13&scale=false&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<%= @event.restaurant.address %>&key=<%= ENV['GOOGLE_API_SERVER_KEY'] %>">
         </div>
 
-        <div class="row">
-          <div class="col-xs-12 col-md-12">
+          <div class="col-xs-12 col-md-6">
             <div class="ultimatum text-center">
               <% if current_user != @event.user %>
                 <h4><%= @ultimatum.strftime("Please answer within:") %></h4>
               <% end %>
             </div>
           </div>
-        </div>
+
 
         <div class="col-xs-12 col-md-12 text-center" id="clockrow">
           <div id="clockdiv">
