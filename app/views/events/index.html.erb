@@ -4,7 +4,7 @@
       <h1>List of events</h1>
       <% @participations.each do |participation, event| %>
         <div class="col-xs-12">
-          <div class="card-index card--evening ">
+          <div class="card-index card--participant ">
             <%= link_to "", event_path(participation.event), class: "card-link" %>
             <div class="col-xs-2 card-bckgd-participation">
               <div class="card__date">
