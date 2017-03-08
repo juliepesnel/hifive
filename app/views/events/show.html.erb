@@ -100,7 +100,7 @@
      <div class="col-xs-12 col-md-12">
       <%= link_to 'Back to list', events_path, class: "btn-medium"%>
         <% if current_user != @event.user %>
-         <%= link_to 'Confirm', participation_path(@participation, participation: {status: :confirmed}), method: :patch, class: "btn-confirm" %>
+         <%= link_to 'Confirm', participation_path(@participation, participation: {status: :confirmed}), method: :patch, class: "btn-create" %>
          <%= link_to 'Decline', participation_path(@participation, participation: {status: :declined}), method: :patch, class: "btn-declined"%>
         <% end %>
         <% if current_user == @event.user %>
