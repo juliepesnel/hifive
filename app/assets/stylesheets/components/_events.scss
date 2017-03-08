@@ -48,12 +48,13 @@ display: flex;
 .card__content {
  padding: 0 1rem;
  position: relative;
-
 }
 
-.restaurant_name {
-  font-size: 16px;
-  color: black;
+.avatar-index-picture {
+  border-radius: 50%;
+  max-width: 60px;
+  max-height: 60px;
+  position: absolute;
 }
 
 .restaurant_picture {
@@ -64,36 +65,30 @@ display: flex;
   margin-top: 22px;
 }
 
-.due_date {
-  font-size: 12px;
-  color: $red;
-
-}
-
-.avatar-index {
-  border-radius: 50%;
-  max-width: 60px;
-  max-height: 60px;
-  position: absolute;
-}
-
-.card-restaurant{
-  position: absolute;
-  right: 10px;
-  top: 35px;
-  max-width:150px;
-  max-height: 100px;
-}
 
 .first_name_index {
 font-size: 12px;
 color: black;
 }
 
+.restaurant_name {
+  font-size: 16px;
+  color: black;
+}
+
+.due_date {
+  font-size: 12px;
+  color: $red;
+
+}
+
+
 .event_cancelled {
 font-size: bold 10px;
 color: red;
 }
+
+
 
 .card-bckgd-participation {
 background-color: #FF33CC;
