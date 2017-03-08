@@ -1,15 +1,10 @@
 <div id="center">
   <div id="wrapper-home">
-
-  <h1>Create and organize your outings very simply!</h1>
-
-  <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
-
-
-
+    <h1>Create and organize your outings very simply!</h1>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+      Launch demo modal
+    </button>
   </div>
   <%= link_to t(".top_call_to_action", default: "Create an event"), new_event_path, class: "button-create-pad" %>
 </div>
@@ -54,24 +49,12 @@
     </div>
   </div>
 </div>
-
-
-
-    <%= link_to t(".top_call_to_action", default: "Create an event"), new_event_path, class: "button-create-pad" %>
-
-
-
-  <%= link_to "#testmodal", class: "", data: { toggle: "modal", userid: "#{current_user.id}" } do %>
+<%= link_to t(".top_call_to_action", default: "Create an event"), new_event_path, class: "button-create-pad" %>
+<%= link_to "#testmodal", class: "", data: { toggle: "modal", userid: "#{current_user.id}" } do %>
     <div class="test">Test</div>
-  <% end %>
-
-  <div class="modal" id="testmodal" tabindex="-1" role="dialog" aria-labelledby="TastesNew">
-    <div class="modal-body">
-      Loading...
-    </div>
+<% end %>
+<div class="modal" id="testmodal" tabindex="-1" role="dialog" aria-labelledby="TastesNew">
+  <div class="modal-body">
+    Loading...
   </div>
-
- </div>
-</body>
-</html>
-
+</div>
