@@ -4,9 +4,8 @@
   border-radius: 2px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16),
               0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  display: block;
-  margin: 30px;
-
+  margin: 10px;
+  display: flex;
 }
 
 .card--participant {
@@ -20,89 +19,89 @@
 }
 
 .card--cancelled {
-border-left: 6px solid #D62828;
-display: flex;
-}
-
-.card__date {
- align-items: center;
- color: white ;
- display: flex;
- flex-direction: column;
- justify-content: center;
- margin-top: 5px;
+  border-left: 6px solid #D62828;
+  display: flex;
 }
 
 .card__date__weekday {
- font-size: 1.15rem;
+ font-size: 1.35rem;
 }
 
 .card__date__day {
- font-size: 1.75rem;
+ font-size: 2rem;
 }
 
 .card__date__month {
- font-size: 1.15rem;
+ font-size: 1.35rem;
 }
 
 .card__content {
- padding: 0 1rem;
- position: relative;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .avatar-index-picture {
   border-radius: 50%;
   max-width: 60px;
   max-height: 60px;
-  position: absolute;
 }
 
+
 .restaurant_picture {
+  margin-top: 7px;
   width: 50px;
   height: 50px;
   object-fit: cover;
   border-radius: 5%;
-  margin-top: 22px;
 }
 
-
 .first_name_index {
-font-size: 12px;
-color: black;
+  font-size: 14px;
+  color: black;
 }
 
 .restaurant_name {
   font-size: 16px;
   color: black;
 }
-
 .due_date {
   font-size: 12px;
   color: $red;
-
 }
-
 
 .event_cancelled {
 font-size: bold 10px;
 color: red;
 }
 
-
-
 .card-bckgd-participation {
-background-color: #FF33CC;
+  background-color: #FF33CC;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-bckgd-event {
-background-color: #66FF99;
+  background-color: #66FF99;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-bckgd-cancelled {
-background-color:#D62828;
-
+  background-color:#D62828;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 
 .card-link {
   position: absolute;
@@ -116,5 +115,5 @@ background-color:#D62828;
 }
 
 .card-link:hover{
-  opacity: 0.1;
+  opacity: 0.05;
 }

@@ -5,9 +5,8 @@
       <% @participations.each do |participation, event| %>
         <div class="col-xs-12">
           <div class="card-index card--participant ">
-            <%= link_to "", event_path(participation.event), class: "card-link" %>
             <div class="col-xs-2 card-bckgd-participation">
-              <div class="card__date">
+
                 <span class="card__date__weekday">
                   <%= participation.event.happen_at.strftime("%d")%>
                 </span>
@@ -17,11 +16,12 @@
                 <span class="card__date__month">
                   <%= participation.event.happen_at.strftime("%Y")%>
                 </span>
-              </div>
+
             </div>
             <div class="col-xs-10 text-center">
+            <%= link_to "", event_path(participation.event), class: "card-link" %>
               <div class="card__content">
-                <div class="row">
+
                   <div class="col-xs-3">
                     <%=  avatar_image_tag(participation.event.user, class: "avatar-index-picture",) %>
                   </div>
@@ -33,11 +33,8 @@
                   <div class="restaurant_name">
                     <p>"<%= participation.event.restaurant.name%>"</p>
                   </div>
-                  <div class="due_date hidden-xs">
-                    <%= participation.event.due_at.strftime("Answer before %d/%m/%Y %H:%M") %>
                   </div>
-                  </div>
-                </div>
+
               </div>
             </div>
           </div>
@@ -54,9 +51,8 @@
       <% @events.each do |event| %>
         <div class="col-xs-12">
           <div class="card-index card--event ">
-            <%= link_to "", event_path(event), class: "card-link" %>
             <div class="col-xs-2 card-bckgd-event">
-              <div class="card__date">
+
                 <span class="card__date__weekday">
                   <%= event.happen_at.strftime("%d")%>
                 </span>
@@ -66,11 +62,12 @@
                 <span class="card__date__month">
                   <%= event.happen_at.strftime("%Y")%>
                 </span>
-              </div>
+
             </div>
             <div class="col-xs-10 text-center">
+             <%= link_to "", event_path(event), class: "card-link" %>
               <div class="card__content">
-                <div class="row">
+
                   <div class="col-xs-3">
                       <%= image_tag event.restaurant.picture, class: "restaurant_picture" %>
                   </div>
@@ -79,7 +76,7 @@
                     <h4><%="Your event!:" + " " + event.restaurant.name%></h4>
                   </div>
                   </div>
-                </div>
+
               </div>
             </div>
           </div>
@@ -95,9 +92,8 @@
      <% @cancelled_events.each do |cancelled_event| %>
        <div class="col-xs-12">
           <div class="card-index card--cancelled">
-            <%= link_to "", event_path(cancelled_event), class: "card-link" %>
-               <div class="col-xs-2 card-bckgd-cancelled">
-               <div class="card__date">
+            <div class="col-xs-2 card-bckgd-cancelled">
+
                  <span class="card__date__weekday">
                    <%= cancelled_event.happen_at.strftime("%d")%>
                  </span>
@@ -107,12 +103,13 @@
                  <span class="card__date__month">
                    <%= cancelled_event.happen_at.strftime("%Y")%>
                  </span>
-               </div>
+
               </div>
               <div class="col-xs-10">
+              <%= link_to "", event_path(cancelled_event), class: "card-link" %>
                <div class="card__content">
-                <div class="row">
-                  <div class="col-xs-3">
+                >
+                  <div class="col-xs-3 ">
                     <%= image_tag cancelled_event.restaurant.picture, class: "restaurant_picture" %>
                   </div>
                   <div class="col-xs-9 col-md-9 first_name_index">
@@ -123,7 +120,7 @@
                       <h4><%="Your event!:" + " " + cancelled_event.restaurant.name%></h4>
                     </div>
                   </div>
-                  </div>
+
                 </div>
               </div>
             </div>
