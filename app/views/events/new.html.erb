@@ -1,22 +1,22 @@
 <div class="container">
   <%= simple_form_for(@event) do |f| %>
-  <h3 id="h3">Choose your friends</h3>
+    <h3 id="margin-top">Choose your friends</h3>
     <div class="selectable_users" id="myscroll-user">
-      <div class='myflextest'>
-        <%= f.fields_for :participations do |uf| %>
-          <% User.all.each do |user| %>
-            <label>
-              <%= uf.check_box "user_ids", { multiple: true }, user.id, nil %>
-              <% if current_user != user %>
-                <%= avatar_image_tag user %>
-               <p><%= user.first_name %></p>
-              <% end %>
-            </label>
+        <div class='myflextest'>
+          <%= f.fields_for :participations do |uf| %>
+            <% User.all.each do |user| %>
+              <label>
+                <%= uf.check_box "user_ids", { multiple: true }, user.id, nil %>
+                <% if current_user != user %>
+                  <%= avatar_image_tag user %>
+                 <p><%= user.first_name %></p>
+                <% end %>
+              </label>
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
+        </div>
     </div>
-    <h3 id="h3">Choose a restaurant</h3>
+    <h3 id="h3" class="margin-top">Choose a restaurant</h3>
     <div class="selectable_restaurants" id="myscroll">
       <div class='myflextest'>
       <% Restaurant.all.each do |restaurant| %>
@@ -55,7 +55,7 @@
         </div>
       </div>
     </div>
-    <div class="text-center">
+    <div class="text-center padded">
       <%= f.button :submit, class: "button-create-pad" %>
       <% end %>
   </div>

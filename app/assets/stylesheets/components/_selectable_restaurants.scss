@@ -18,7 +18,7 @@
   }
 
   input:checked + img {
-    border: 2px solid #67d778;
+    border: 4px solid magenta;
   }
 
   input {
@@ -26,18 +26,25 @@
   }
 }
 
-#h3 {
-    border-bottom: 3px solid #FFFF00;
-  }
+
+#margin-top {
+  margin-top: 5px;
+  margin-bottom: 2px;
+  border-bottom: 3px solid magenta;
+}
+
+#h3{
+  border-bottom: 3px solid magenta;
+}
 
 .category-restaurant {
   position: relative;
   top: -151px;
   left: 7px;
   width: 57%;
-  background: #67d778;
+  background: #00E8BB;
   padding: 3px 6px;
-  color: rgb(255, 255, 255);
+  color: black;
   font-size: 10px;
   font-weight: 600;
   text-transform: uppercase;
@@ -51,11 +58,9 @@
 }
 
 .when {
-  padding-top: 10px;
-  padding-bottom: 20px;
-
   h3 {
-    border-bottom: 3px solid #FFFF00;
+    border-bottom: 3px solid magenta;
+    margin-top: -3px;
   }
 }
 
@@ -66,7 +71,7 @@
   margin-bottom: 20px;
 
   h3 {
-    border-bottom: 3px solid #FFFF00;
+    border-bottom: 3px solid magenta;
   }
 }
 
