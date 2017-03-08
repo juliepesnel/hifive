@@ -9,17 +9,17 @@
 }
 
 .card--participant {
- border-left: 6px solid #FF33CC;
+ border-left: 6px solid white;
  display: flex;
 }
 
 .card--event {
- border-left: 6px solid #00E8BB;
+ border-left: 6px solid white;
  display: flex;
 }
 
 .card--cancelled {
-  border-left: 6px solid #D62828;
+  border-left: 6px solid white;
   display: flex;
 }
 
@@ -77,8 +77,8 @@ color: red;
 }
 
 .card-bckgd-participation {
-  background-color: #FF33CC;
-  color: white;
+  background-color: #00E8BB;
+  color: black;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -86,8 +86,8 @@ color: red;
 }
 
 .card-bckgd-event {
-  background-color: #00E8BB;
-  color: white;
+  background-color: #FCFC41;
+  color: black;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -95,8 +95,8 @@ color: red;
 }
 
 .card-bckgd-cancelled {
-  background-color:#D62828;
-  color: white;
+  background-color:#FF33CC;
+  color: black;
   display: flex;
   flex-direction: column;
   justify-content: center;
