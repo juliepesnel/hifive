@@ -34,7 +34,7 @@
           <%= @event.title %>
         </div>
         <div class="col-xs-12 col-md-6">
-            <img class="google_map" src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @event.restaurant.address %>&zoom=13&scale=false&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<%= @event.restaurant.address %>">
+            <img class="google_map" src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @event.restaurant.address %>&zoom=13&scale=false&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<%= @event.restaurant.address %>&key=<%= ENV['GOOGLE_API_SERVER_KEY'] %>">
         </div>
         <div class="col-xs-12 col-md-6 text-center">
           <div id="clockdiv">
