@@ -16,15 +16,12 @@
     border: 3px solid transparent;
   }
   input:checked + img {
-    border: 2px solid #67d778;
+    border: 3px solid magenta;
   }
   input {
     display: none;
   }
 
-  h3 {
-    border-bottom: 3px solid #FFFF00;
-  }
 }
 
 label {
