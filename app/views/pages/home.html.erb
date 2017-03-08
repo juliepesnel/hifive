@@ -1,7 +1,14 @@
 <div id="center">
   <div id="wrapper-home">
-    <h1>Create and organize your outings very simply!</h1>
-    <!-- Button trigger modal -->
+
+
+  <h1>Create and organize your outings very simply!</h1>
+
+
+
+
+
+
   </div>
   <%= link_to t(".top_call_to_action", default: "Create an event"), new_event_path, class: "button-create-pad" %>
 </div>
@@ -46,12 +53,43 @@
     </div>
   </div>
 </div>
-<%= link_to t(".top_call_to_action", default: "Create an event"), new_event_path, class: "button-create-pad" %>
-<%= link_to "#testmodal", class: "", data: { toggle: "modal", userid: "#{current_user.id}" } do %>
+
+
+
+
+
+  <%= link_to "#new-taste", class: "", data: { toggle: "modal" } do %>
     <div class="test">Test</div>
-<% end %>
-<div class="modal" id="testmodal" tabindex="-1" role="dialog" aria-labelledby="TastesNew">
-  <div class="modal-body">
-    Loading...
+  <% end %>
+
+  <div class="modal" id="new-taste" tabindex="-1" role="dialog" aria-labelledby="TastesNew">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          Loading...
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+
+
+
+
+
+
+
+<% content_for :after_js do %>
+  <script>
+    $(function(){
+      var url = document.location.href;
+      var anchor = url.substring(url.indexOf("#") + 1);
+      if (anchor == "sign_up" || anchor == "sign_in") {
+        $('#new-taste').modal({ show: true, remote: "<%= new_taste_path %>" });
+      }
+    });
+  </script>
+<% end %>
+
+
+
+

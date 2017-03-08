@@ -2,6 +2,7 @@ class TastesController < ApplicationController
 
   def new
     @taste = Taste.new
+    @category = Category.all.sample
     render layout: false
   end
 

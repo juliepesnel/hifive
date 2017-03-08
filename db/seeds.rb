@@ -182,10 +182,6 @@ restaurants = [
 
 restaurants.each {|resto| Restaurant.create!(resto)}
 
-
-
-
-
 events = [
   {
     restaurant: Restaurant.all.sample,
