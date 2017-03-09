@@ -112,7 +112,7 @@
             <%= link_to 'Re-launch event', event_path(@event, event: {canceled_at: :nil}), method: :patch, class: "btn-confirm" %>
           <% else %>
             <%= link_to 'Cancel event', edit_event_path(@event), class: "btn-declined" %>
-            <%= link_to 'send invitations!', events_path, class: "btn-create" %>
+            <%= link_to 'send invitations!', events_path, class: "btn-create"%>
           <% end %>
         <% end %>
       </div>
