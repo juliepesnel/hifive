@@ -39,14 +39,13 @@
             <img class="google_map" src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @event.restaurant.address %>&zoom=13&scale=false&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<%= @event.restaurant.address %>&key=<%= ENV['GOOGLE_API_SERVER_KEY'] %>">
         </div>
 
-          <div class="col-xs-12 col-md-6">
-            <div class="ultimatum text-center">
-              <% if current_user != @event.user %>
-                <h4><%= @ultimatum.strftime("Please answer within:") %></h4>
-              <% end %>
-            </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="ultimatum text-center">
+            <% if current_user != @event.user %>
+              <h4><%= @ultimatum.strftime("Please answer within:") %></h4>
+            <% end %>
           </div>
-
+        </div>
 
         <div class="col-xs-12 col-md-6 text-center" id="clockrow">
           <div id="clockdiv">
@@ -98,8 +97,6 @@
       </div>
     </div>
 
-
-
     <div class="row text-center test">
      <div class="col-xs-12 col-md-12">
       <%= link_to 'Back to list', events_path, class: "btn-medium"%>
@@ -112,7 +109,7 @@
             <%= link_to 'Re-launch event', event_path(@event, event: {canceled_at: :nil}), method: :patch, class: "btn-confirm" %>
           <% else %>
             <%= link_to 'Cancel event', edit_event_path(@event), class: "btn-declined" %>
-            <%= link_to 'send invitations!', edit_event_path(@event), class: "btn-create" %>
+            <%= link_to 'Send invitations!', twilio_sendsms_path(@event_id), twilio: :sendsms, method: :post, class: "btn-create" %>
           <% end %>
         <% end %>
       </div>
@@ -120,12 +117,9 @@
   </div>
 </div>
 
-
 <%= content_for :after_js do %>
   <script>
     var deadline = "<%= @event.due_at.strftime('%B %d %Y %H:%M:%S') %>";
-
-
     initializeClock('clockdiv', deadline);
   </script>
 <% end %>
