@@ -29,7 +29,7 @@
     </div>
     <div class="selectable_restaurants" id="myscroll" aria-hidden="true">
       <div class='myflextestx'>
-      <% Restaurant.all.each do |restaurant| %>
+      <% Restaurant.all.shuffle.each do |restaurant| %>
         <label>
           <%= f.radio_button "restaurant_id", restaurant.id %>
           <%= image_tag restaurant.picture %>
