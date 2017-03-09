@@ -24,10 +24,9 @@ gem 'autoprefixer-rails'
 gem 'omniauth-facebook'
 gem 'perfect-scrollbar-rails'
 gem "geocoder"
+gem 'twilio-ruby'
 
-gem "coffee-rails"
 gem "gmaps4rails"
-gem 'sass-rails'
 gem 'compass-rails'
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
