@@ -1,12 +1,9 @@
 @import "compass/css3";
 
 .loader {
-  height: 50px;
-  left: 50%;
-  // margin: -25px 0 0 -75px;
-  // position: absolute;
-  top: 50%;
+  height: 100%;
   width: 150px;
+  margin: auto;
   @include border-radius(100%);
 
   .bar {
@@ -63,3 +60,7 @@
   }
 }
 
+.loader-container {
+  height: 20px;
+  width: 100%;
+}
