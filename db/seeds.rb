@@ -1,5 +1,3 @@
-require 'faker'
-
 Restaurant.destroy_all
 Event.destroy_all
 Participation.destroy_all
@@ -81,16 +79,16 @@ users = [
 users.each {|user| User.create!(user)}
 
 category_list = [
-  ["Vietnamese", "http://regevelya.com/wp-content/uploads/2015/10/vietnamese-pho-ga.jpg"],
-  ["Italian", "http://regevelya.com/wp-content/uploads/2015/10/pizza-italy.jpg"],
-  ["French", "http://regevelya.com/wp-content/uploads/2013/11/french-food-snails2.jpg"],
-  ["American","https://www.waiter.com/blog/wp-content/uploads/2015/06/hamburger.jpg"],
-  ["Fast-food","https://www.waiter.com/blog/wp-content/uploads/2015/06/hamburger.jpg"],
+  ["Vietnamese", "https://images.unsplash.com/photo-1478749485505-2a903a729c63?dpr=0.800000011920929&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop="],
+  ["Italian", "https://images.unsplash.com/photo-1458642849426-cfb724f15ef7?dpr=0.800000011920929&auto=format&fit=crop&w=1500&h=1001&q=80&cs=tinysrgb&crop="],
+  ["French", "https://images.unsplash.com/photo-1432139509613-5c4255815697?dpr=0.3333333432674408&auto=format&fit=crop&w=1500&h=2265&q=80&cs=tinysrgb&crop="],
+  ["American","https://images.unsplash.com/photo-1487004121828-9fa15a215a7a?dpr=0.3333333432674408&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop="],
+  ["Fast-food","https://unsplash.com/collections/398435/fast-food?photo=aZOqcEK2KuQ"],
   ["Mexican", "http://regevelya.com/wp-content/uploads/2015/10/mexico-huaraches.jpg"],
-  ["Taiwanese","http://regevelya.com/wp-content/uploads/2013/11/taiwan-food.jpg"],
-  ["Greek", "http://regevelya.com/wp-content/uploads/2013/11/greek-salad.jpg"],
-  ["Thaï", "https://www.waiter.com/blog/wp-content/uploads/2015/06/hamburger.jpg" ],
-  ["Gastronomic", "http://regevelya.com/wp-content/uploads/2013/11/beef-tenderloin-canada.jpg"]
+  ["Taiwanese","http://www.taiwanese-secrets.com/image-files/taiwan-food.005.jpg"],
+  ["Greek", "http://www.greecewanderer.com/wp-content/uploads/2012/04/salad_sea_house.jpg"],
+  ["Thaï", "https://tse3.mm.bing.net/th?id=OIP.g2Ro-nOJsE6zRnRtojj_vAEsDI&pid=Api" ],
+  ["Gastronomic", "https://tse3.mm.bing.net/th?id=OIP.8q6dAzIiIr_Sd0aRG08yzQEsDS&pid=Api"]
 ]
 
 category_list.each do |category|
@@ -192,33 +190,18 @@ events = [
   },
     {
     restaurant: Restaurant.all.sample,
-    title: "Holliday preps",
-    user: User.first,
+    title: "Holliday Prep's",
+    user: User.fifth,
     happen_at: DateTime.now + (24/24.0),
     due_at: DateTime.now + (18/24.0)
   },
    {
     restaurant: Restaurant.all.sample,
     title: "DRINK! it's been too long..",
-    user: User.third,
+    user: User.last,
     happen_at: DateTime.now + (48/24.0),
     due_at: DateTime.now + (32/24.0)
-  },
-   {
-    restaurant: Restaurant.all.sample,
-    title: "Besoin de sortir les gars avec bébé ca va plus",
-    user: User.fourth,
-    happen_at: DateTime.now + (168/24.0),
-    due_at: DateTime.now + (72/24.0)
-  },
-   {
-    restaurant: Restaurant.all.sample,
-    title: "APERO PINARD COCHONAILLE????",
-    user: User.second,
-    happen_at: DateTime.now + (5/24.0),
-    due_at: DateTime.now + (4/24.0)
   }
-
 ]
 
 events.each {|event| Event.create!(event)}
@@ -237,6 +220,12 @@ participations = [
 },
 
 {
+  user: User.last,
+  event: Event.first,
+  status: 1
+},
+
+{
   user: User.second,
   event: Event.first,
   status: 2
@@ -267,7 +256,7 @@ participations = [
 },
 
 {
-  user: User.all.sample,
+  user: User.first,
   event: Event.third,
   status: 2
 },
@@ -275,48 +264,6 @@ participations = [
 {
   user: User.second,
   event: Event.third,
-  status: 2
-},
-
-{
-  user: User.third,
-  event: Event.fourth,
-  status: 2
-},
-
-{
-  user: User.fifth,
-  event: Event.fourth,
-  status: 2
-},
-
-{
-  user: User.first,
-  event: Event.fourth,
-  status: 2
-},
-
-{
-  user: User.second,
-  event: Event.fourth,
-  status: 2
-},
-
-{
-  user: User.first,
-  event: Event.fifth,
-  status: 2
-},
-
-{
-  user: User.third,
-  event: Event.fifth,
-  status: 2
-},
-
-{
-  user: User.fourth,
-  event: Event.fifth,
   status: 2
 },
 ]
