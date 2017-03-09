@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-before_action :set_event, only: [:show, :edit, :update, :destroy]
+before_action :set_event, only: [:show, :edit, :update, :destroy, :sendsms]
 
 
  def index
@@ -54,6 +54,16 @@ end
    @event.canceled_at = Time.now
    redirect_to :index, notice: "Event cancelled"
  end
+
+ def sendsms
+    @client = Twilio::REST::Client.new
+    @client.messages.create(
+      from: '+33644643582',
+      to: '+33685455194',
+      body: "Hello, your friend Anteo send you an invitation ! Confirm your participation on http://hifive.fr"
+    )
+    redirect_to event_path(@event), notice: "SMS sended !"
+  end
 
 private
 

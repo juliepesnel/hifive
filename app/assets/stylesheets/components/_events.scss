@@ -6,20 +6,24 @@
               0 2px 10px 0 rgba(0, 0, 0, 0.12);
   margin: 10px;
   display: flex;
+  min-height: 90px;
 }
 
 .card--participant {
- border-left: 6px solid white;
+ border-left: 6px solid #00E8BB;
+ border-bottom: 6px solid #00E8BB;
  display: flex;
 }
 
 .card--event {
- border-left: 6px solid white;
+ border-left: 6px solid #FCFC41;
+ border-bottom: 6px solid #FCFC41;
  display: flex;
 }
 
 .card--cancelled {
-  border-left: 6px solid white;
+  border-left: 6px solid #FF33CC;
+  border-bottom: 6px solid #FF33CC;
   display: flex;
 }
 
@@ -36,7 +40,6 @@
 }
 
 .card__content {
-  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,11 +53,8 @@
 
 
 .restaurant_picture {
-  margin-top: 7px;
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  border-radius: 5%;
+  width: 60px;
+  height: 60px;
 }
 
 .first_name_index {
@@ -95,7 +95,7 @@ color: red;
 }
 
 .card-bckgd-cancelled {
-  background-color:#FF33CC;
+  background-color: #FF33CC;
   color: black;
   display: flex;
   flex-direction: column;
