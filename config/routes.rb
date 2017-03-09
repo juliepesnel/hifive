@@ -3,10 +3,14 @@ Rails.application.routes.draw do
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   root to: 'pages#home'
-  resources :events
+  resources :events do
+    member do
+      post '/sendsms' => 'events#sendsms'
+    end
+  end
   resources :tastes, only: [:new, :create]
   resources :participations, only: [:update]
-  post 'twilio/sendsms' => 'twilio#sendsms'
+  # post 'twilio/sendsms' => 'twilio#sendsms'
 
   mount Attachinary::Engine => "/attachinary"
 
