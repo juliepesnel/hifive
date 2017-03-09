@@ -10,11 +10,13 @@
   </div>
   <div class="text-center">
 
-  <%= f.input_field :level, as: :radio_buttons, class: "modal-button" %>
+  <%= f.input :category_id, input_html: { value: @category.id }, as: :hidden %>
   </div>
 
   <div class="text-center">
-    <%= f.button :submit, class: "btn-declined btn-modal" %>
+    <%= f.submit "Yes", class: "btn button-create-pad" %>
+    <%= f.submit "No", class: "btn button-create-pad"  %>
+
   </div>
 
 <% end %>

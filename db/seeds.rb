@@ -94,7 +94,7 @@ category_list = [
 ]
 
 category_list.each do |category|
-  Category.create( name:category[0], pictoname:category[1] )
+  Category.create( name: category[0], pictoname: category[1] )
 end
 
 restaurants = [
