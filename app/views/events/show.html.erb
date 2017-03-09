@@ -5,7 +5,6 @@
       <% if current_user == @event.user %>
         <h1 id = "show_title"><%= "Hey" + " " + @creator + "," + " " + "here is your event!" %> </h1>
         <% else %>
-
         <h1 id = "show_title"><%= @creator + "'s event" %></h1>
         <% end %>
       </div>
