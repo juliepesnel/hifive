@@ -6,7 +6,17 @@
   white-space: nowrap;
 }
 
+.myflextestx {
+  white-space: nowrap;
+}
+
+
+.restaurant-container{
+  min-height: 190px;
+}
+
 .selectable_restaurants {
+
   img {
     width: 150px;
     height: 150px;
@@ -50,7 +60,7 @@
   text-transform: uppercase;
 }
 
-.text_seclectable_restaurant {
+.text_selectable_restaurant {
   position: relative;
   top: -24px;
   left: 1px;

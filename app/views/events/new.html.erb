@@ -1,21 +1,23 @@
 <div class="container">
   <%= simple_form_for(@event) do |f| %>
-    <h3 id="margin-top">Choose your friends</h3>
+  <h3 id="h3">Choose your friends</h3>
     <div class="selectable_users" id="myscroll-user">
-        <div class='myflextest'>
-          <%= f.fields_for :participations do |uf| %>
-            <% User.all.each do |user| %>
-              <label>
-                <%= uf.check_box "user_ids", { multiple: true }, user.id, nil %>
-                <% if current_user != user %>
-                  <%= avatar_image_tag user %>
-                 <p><%= user.first_name %></p>
-                <% end %>
-              </label>
-            <% end %>
+      <div class='myflextest'>
+        <%= f.fields_for :participations do |uf| %>
+          <% User.all.each do |user| %>
+            <label>
+              <%= uf.check_box "user_ids", { multiple: true }, user.id, nil %>
+              <% if current_user != user %>
+                <%= avatar_image_tag user %>
+               <p><%= user.first_name %></p>
+              <% end %>
+            </label>
           <% end %>
-        </div>
+        <% end %>
+      </div>
     </div>
+<div class="restaurant-container">
+    <h3 id="h3">Choose a restaurant</h3>
     <div class="loader-container">
       <div class='loader'>
         <div class='bar'></div>
@@ -25,9 +27,8 @@
         <div class='bar'></div>
       </div>
     </div>
-    <h3 id="h3" class="margin-top">Choose a restaurant</h3>
-    <div class="selectable_restaurants" id="myscroll">
-      <div class='myflextest'>
+    <div class="selectable_restaurants" id="myscroll" aria-hidden="true">
+      <div class='myflextestx'>
       <% Restaurant.all.each do |restaurant| %>
         <label>
           <%= f.radio_button "restaurant_id", restaurant.id %>
@@ -35,7 +36,7 @@
           <div class="category-restaurant text-center">
             <%= restaurant.category.name %>
           </div>
-          <div class="text_seclectable_restaurant text-center">
+          <div class="text_selectable_restaurant text-center">
             <%= restaurant.name %>
             <p>
               <i class="fa fa-star" aria-hidden="true"></i>
@@ -48,6 +49,7 @@
       <% end %>
       </div>
     </div>
+ </div>
     <div class="when">
       <div class="row">
         <div class="col-xs-12 text-left">
@@ -64,8 +66,8 @@
         </div>
       </div>
     </div>
-    <div class="text-center padded">
-      <%= f.button :submit, class: "button-create-pad" %>
-      <% end %>
+  <div class="text-center padded">
+    <%= f.button :submit, class: "button-create-pad" %>
+  <% end %>
   </div>
 </div>
