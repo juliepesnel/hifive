@@ -9,5 +9,5 @@ $( ".myflextest input" ).click(function() {
   setTimeout(function() {
    $('.loader').fadeOut('fast');
    $('.selectable_restaurants').fadeIn('fast');
-  }, 2000);
+  }, 1500);
 });
