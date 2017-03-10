@@ -73,10 +73,9 @@
                   </div>
                   <div class="col-xs-9 col-md-9 first_name_index">
                    <div class="restaurant_name">
-                    <h4><%="Your event!:" + " " + event.restaurant.name%></h4>
+                    <h4><%="Your event!:" + " " + event.title.to_s %></h4>
                   </div>
                   </div>
-
               </div>
             </div>
           </div>
@@ -109,7 +108,7 @@
               <%= link_to "", event_path(cancelled_event), class: "card-link" %>
                <div class="card__content">
                   <div class="col-xs-3 ">
-                    <%= image_tag cancelled_event.restaurant.picture, class: "restaurant_picture" %>
+                    <%= image_tag cancelled_event.title.to_s, class: "restaurant_picture" %>
                   </div>
                   <div class="col-xs-9 col-md-9 first_name_index">
                      <div class="event_cancelled">
